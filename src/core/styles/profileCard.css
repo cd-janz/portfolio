@@ -36,3 +36,15 @@
   font-weight: 200;
   font-size: 0.95rem;
 }
+
+.profile_social{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.profile_social-icon{
+  padding: 7px;
+  border-radius: 10px;
+}

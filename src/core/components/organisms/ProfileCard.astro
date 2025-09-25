@@ -12,6 +12,15 @@ const data = await getPersonData(locale);
     <figure class="profile_card-name-decoration"/>
   </div>
   <h4 class="profile_card-position">{data.position}</h4>
-  <div></div>
+  <div class="profile_social">
+    {data.social.map(social => (
+      <a href={social.path} target="_blank"
+         class="profile_social-icon bg-primary-disabled/40 hover:bg-primary-disabled/20 text-primary-focus hover:text-primary-focus/60">
+        <figure class="w-6 h-6">
+          <social.icon/>
+        </figure>
+      </a>
+    ))}
+  </div>
   <h4 class="profile_card-phrase">"{data.phrase}"</h4>
 </div>

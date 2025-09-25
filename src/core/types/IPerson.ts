@@ -5,9 +5,10 @@ export default interface IPerson {
   phoneNumber: string;
   position: string;
   phrase: string;
+  social: IPersonSocial[]
 }
 
 export interface IPersonSocial{
-  icon: any,
+  icon: any
   path: string
 }

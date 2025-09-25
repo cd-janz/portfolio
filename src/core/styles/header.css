@@ -1,6 +1,6 @@
 header {
   height: 70px;
-  width: 100%;
+  width: 95%;
   border-radius: 0 0 12px 12px;
   border: 1px solid var(--border-focus);
   display: flex;

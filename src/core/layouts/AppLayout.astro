@@ -3,6 +3,7 @@ import "@/core/styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/core/components/organisms/Header.astro";
 import ProfileCard from "@/core/components/organisms/ProfileCard.astro";
+import Footer from "@/core/components/organisms/Footer.astro";
 interface Props {
   title: string;
 }
@@ -21,14 +22,17 @@ const locale = Astro.currentLocale!;
     <title>{title}</title>
   </head>
   <body>
-    <div class="app_container">
-      <Header />
-      <main>
-        <div class="left">
-          <ProfileCard/>
+    <Header />
+    <main>
+      <div class="left">
+        <ProfileCard/>
+      </div>
+      <div class="right">
+        <div class="main">
+          <slot />
         </div>
-        <slot />
-      </main>
-    </div>
+        <Footer />
+      </div>
+    </main>
   </body>
 </html>
