@@ -1,0 +1,17 @@
+---
+import "@/core/styles/profileCard.css"
+import getPersonData from "@/core/content/data/person.ts";
+import type {Locale} from "@/core/types/Locales.ts";
+const locale = Astro.currentLocale! as Locale;
+const data = await getPersonData(locale);
+---
+<div class="profile_card">
+  <img src="/public/pictures/avatar.webp" alt="temporary cover" class="profile_card-img"/>
+  <div class="w-full flex flex-col items-center">
+    <h3 class="font-semibold profile_card-name">{data.firstName} {data.lastName}</h3>
+    <figure class="profile_card-name-decoration"/>
+  </div>
+  <h4 class="profile_card-position">{data.position}</h4>
+  <div></div>
+  <h4 class="profile_card-phrase">"{data.phrase}"</h4>
+</div>

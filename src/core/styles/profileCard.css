@@ -1,0 +1,38 @@
+.profile_card{
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile_card-img{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.profile_card-name{
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+}
+
+.profile_card-name-decoration{
+  width: 20%;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 15px;
+}
+
+.profile_card-position{
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.05rem;
+}
+
+.profile_card-phrase{
+  text-align: center;
+  font-weight: 200;
+  font-size: 0.95rem;
+}

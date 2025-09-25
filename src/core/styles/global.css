@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgba(240, 246, 252, 1);
+  --surface: rgba(255, 255, 255, 1);
+  --border: rgba(221, 233, 243, 1);
+  --border-focus: rgba(200, 220, 235, 1);
+  --border-disabled: rgba(170, 190, 205, 1);
+  --text: rgba(30, 41, 59, 1);
+  --text-focus: rgba(37, 99, 235, 1);
+  --text-disabled: rgba(148, 163, 184, 1);
+  --text-alternative: rgba(255, 255, 255, 1);
+  --primary: rgba(100, 145, 210, 1);
+  --primary-active: rgba(80, 120, 190, 1);
+  --primary-focus: rgba(60, 100, 170, 1);
+  --primary-disabled: rgba(120, 160, 220, 1);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-focus: var(--text-focus);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-alternative: var(--text-alternative);
+}
+
+body {
+  background: var(--background);
+  width: 100dvw;
+  height: 100dvh;
+  color: var(--text);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app_container {
+  width: 95%;
+  height: 100%;
+}
+main{
+  display: flex;
+  gap: 30px;
+  height: 100%;
+}
+.left{
+  width: 350px;
+  height: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

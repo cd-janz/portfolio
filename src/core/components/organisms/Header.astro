@@ -1,0 +1,31 @@
+---
+import "@/core/styles/header.css";
+import BugIcon from "@/core/assets/icons/system/BugIcon.astro";
+import getAppData from "@/core/content/data/app.ts";
+import {getRelativeLocaleUrl} from "astro:i18n";
+import type {Locale} from "@/core/types/Locales.ts";
+import clsx from "clsx";
+const locale = Astro.currentLocale!;
+const app = await getAppData(locale as Locale);
+const url = Astro.url;
+console.log(url.pathname);
+---
+
+<header class="bg-surface backdrop-blur-md">
+  <div class="title">
+    <figure class="w-6 h-6">
+      <BugIcon />
+    </figure>
+    <h1 class="font-bold">{app.title}</h1>
+  </div>
+  <nav>
+    {app.nav.map((item, index) => (
+      <li class="w-fit h-fit">
+        <a href={getRelativeLocaleUrl(locale, item.path)}
+           class={clsx("nav-item", getRelativeLocaleUrl(locale, item.path) === url.pathname && "active")}>
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </nav>
+</header>
