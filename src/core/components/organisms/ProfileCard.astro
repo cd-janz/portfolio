@@ -2,25 +2,39 @@
 import "@/core/styles/profileCard.css"
 import getPersonData from "@/core/content/data/person.ts";
 import type {Locale} from "@/core/types/Locales.ts";
+import { Image } from 'astro:assets';
+import StarIcon from "@/core/assets/icons/system/StarIcon.astro";
 const locale = Astro.currentLocale! as Locale;
 const data = await getPersonData(locale);
 ---
 <div class="profile_card">
-  <img src="/public/pictures/avatar.webp" alt="temporary cover" class="profile_card-img"/>
-  <div class="w-full flex flex-col items-center">
-    <h3 class="font-semibold profile_card-name">{data.firstName} {data.lastName}</h3>
-    <figure class="profile_card-name-decoration"/>
+  <figure class="profile_card-decoration bg-primary-active"/>
+  <Image src="/public/pictures/avatar.png" alt="temporary cover" width={200} height={200} loading="lazy"
+         class="profile_card-img"/>
+  <div class="flex flex-col gap-2">
+    <div class="w-full flex flex-col items-center">
+      <h3 class="font-semibold profile_card-name">{data.firstName} {data.lastName}</h3>
+      <figure class="profile_card-name-decoration"/>
+    </div>
+    <h5 class="profile_card-position text-primary-active">{data.position}</h5>
   </div>
-  <h4 class="profile_card-position">{data.position}</h4>
   <div class="profile_social">
     {data.social.map(social => (
       <a href={social.path} target="_blank"
          class="profile_social-icon bg-primary-disabled/40 hover:bg-primary-disabled/20 text-primary-focus hover:text-primary-focus/60">
-        <figure class="w-6 h-6">
+        <figure class="w-5 h-5">
           <social.icon/>
         </figure>
       </a>
     ))}
   </div>
-  <h4 class="profile_card-phrase">"{data.phrase}"</h4>
+  <div class="flex flex-col gap-1">
+    <div class="profile_separator">
+      <figure class="w-full absolute h-[2px] bg-border"/>
+      <figure class="text-primary w-5 h-5 z-10 bg-surface">
+        <StarIcon />
+      </figure>
+    </div>
+    <h4 class="profile_card-phrase">"{data.phrase}"</h4>
+  </div>
 </div>

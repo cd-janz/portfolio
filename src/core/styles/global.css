@@ -1,25 +1,37 @@
 @import "tailwindcss";
 
 :root {
+  --header: 70px;
+  --gap: 15px;
+
   --background: rgba(240, 246, 252, 1);
   --surface: rgba(255, 255, 255, 1);
+
   --border: rgba(221, 233, 243, 1);
   --border-focus: rgba(200, 220, 235, 1);
   --border-disabled: rgba(170, 190, 205, 1);
+
   --text: rgba(30, 41, 59, 1);
   --text-focus: rgba(37, 99, 235, 1);
   --text-disabled: rgba(148, 163, 184, 1);
   --text-alternative: rgba(255, 255, 255, 1);
+
   --primary: rgba(100, 145, 210, 1);
   --primary-active: rgba(80, 120, 190, 1);
   --primary-focus: rgba(60, 100, 170, 1);
   --primary-disabled: rgba(120, 160, 220, 1);
+
+  --muted: rgba(245, 247, 249, 1);
+  --muted-focus: rgba(235, 239, 243, 1);
+  --muted-disabled: rgba(250, 251, 252, 1);
 }
 
 @theme {
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-border: var(--border);
+  --color-border-focus: var(--border-focus);
+  --color-border-disabled: var(--border-disabled);
   --color-text: var(--text);
   --color-text-focus: var(--text-focus);
   --color-text-disabled: var(--text-disabled);
@@ -28,49 +40,83 @@
   --color-primary-active: var(--primary-active);
   --color-primary-focus: var(--primary-focus);
   --color-primary-disabled: var(--primary-disabled);
+  --color-muted: var(--muted);
+  --font-poppins: "Poppins", sans-serif;
 }
+
 
 body {
   background: var(--background);
   max-width: 100dvw;
-  max-height: 100dvh;
-  height: 100dvh;
+  min-height: auto;
+  height: auto;
+  overflow: visible;
   color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-main{
-  display: flex;
-  gap: 15px;
-  width: 95%;
-  height: 100%;
-}
-.left{
-  width: 340px;
-  height: 100%;
-  padding: 15px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.right{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 15px;
+  font-family: "Poppins", sans-serif;
+  padding-bottom: 15px;
 }
 
 .main{
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  width: 95%;
+}
+.left{
+  position: sticky;
+  top: 85px;
+  display: flex;
+  min-width: 300px;
+  width: 300px;
+}
+
+main{
   width: 100%;
-  height: 100%;
-  background-color: var(--surface);
-  border-radius: 12px;
-  padding: 5px;
+  min-height: calc(100dvh - (var(--header) + (var(--gap) * 2))); /* gap * 2 its about padding bottom*/
+  background: var(--surface);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+h1, h2, h3, h4{
+  font-family: Merienda, monospace, sans-serif;
+}
+h5, h6, li {
+  font-family: "Victor Mono", monospace, sans-serif;
+}
+a, span, p {
+  font-family: Poppins, sans-serif;
+}
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid;
+}
+
+.btn.primary{
+  background-color: var(--primary);
+  color: var(--text-alternative);
+  border-color: var(--primary-disabled);
+}
+.btn.primary:hover{
+  background-color: var(--primary-disabled);
+  border-color: var(--primary);
+}
+.btn.muted{
+  background: var(--surface);
+  border-color: var(--border);
+}
+.btn.muted:hover{
+  background-color: var(--muted);
+  border-color: var(--border-focus);
 }

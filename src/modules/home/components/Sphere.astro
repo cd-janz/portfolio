@@ -1,0 +1,21 @@
+---
+
+---
+<figure class="hero_sphere">
+  <div class="absolute top-[10%] w-[20%] flex flex-col items-center">
+    <slot />
+  </div>
+</figure>
+<style is:inline>
+  .hero_sphere{
+    position: absolute;
+    width: 130dvw;
+    height: 100dvw;
+    border: 2px solid var(--border);
+    background: linear-gradient(180deg, var(--border) 0%, var(--surface) 30%);
+    top: 30%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+  }
+</style>

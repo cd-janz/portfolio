@@ -1,0 +1,40 @@
+---
+
+---
+<div class="starts_container relative w-full h-full">
+  {Array.from({ length: 50 }).map(() => {
+    const top = 50 + Math.random() * 95;
+    const left = Math.random() * 95;
+    return (
+      <figure class="w-[3px] h-[3px] bg-border-focus absolute star" style={{ top: `${top}%`, left: `${left}%` }}/>
+    );
+  })}
+  {Array.from({ length: 50 }).map((_, i) => {
+    const top = Math.random() * 60;
+    const left = Math.random() * 95;
+    return (
+      <figure class="w-[3px] h-[3px] bg-border-focus absolute" style={{ top: `${top}%`, left: `${left}%`}}/>
+    );
+  })}
+</div>
+<style is:inline>
+  @keyframes starUps {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-40dvh);
+    }
+  }
+  .starts_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: transparent;
+  }
+  .star{
+    animation: starUps 25s linear infinite alternate;
+  }
+</style>

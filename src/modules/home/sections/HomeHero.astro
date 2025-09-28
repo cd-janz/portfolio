@@ -1,0 +1,40 @@
+---
+import "@/home/styles/hero.css"
+import type {Locale} from "@/core/types/Locales.ts";
+import Sphere from "../components/Sphere.astro"
+import getPersonData from "@/core/content/data/person.ts";
+import getHeroWelcome from "@/core/content/data/welcome.ts";
+import FixedStars from "@/home/components/FixedStars.astro";
+import DocumentIcon from "@/core/assets/icons/system/DocumentIcon.astro";
+import PhoneIcon from "@/core/assets/icons/system/PhoneIcon.astro";
+const locale = Astro.currentLocale! as Locale;
+const welcome = await getHeroWelcome(locale);
+const data = await getPersonData(locale);
+---
+<div class="hero_container">
+  <FixedStars/>
+  <Sphere>
+    <div class="text-center">
+      <h6 class="welcome font-medium">{welcome.first}</h6>
+      <div class="name font-bold">
+        <h3>{data.firstName.split(" ")[0]} {data.lastName}</h3>
+        (<h3 class="uppercase text-primary-disabled">{data.nickname}</h3>)
+      </div>
+      <h6 class="position font-light">{data.position}</h6>
+    </div>
+    <div class="buttons_container">
+      <button class="btn primary">
+        <i class="w-5 h-5">
+          <DocumentIcon/>
+        </i>
+        <span class="hero_button-text">curriculum vitae</span>
+      </button>
+      <a href="#contact" class="btn muted">
+        <figure class="w-5 h-5">
+          <PhoneIcon />
+        </figure>
+        <span class="hero_button-text">contact</span>
+      </a>
+    </div>
+  </Sphere>
+</div>

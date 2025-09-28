@@ -1,0 +1,91 @@
+---
+import SectionLayout from "@/core/layouts/SectionLayout.astro"
+import "../styles/about.css"
+import AboutCard from "@/home/components/AboutCard.astro";
+import {getCollection, render} from "astro:content";
+import PersonIcon from "@/core/assets/icons/system/PersonIcon.astro";
+import ServiceIcon from "@/core/assets/icons/system/ServiceIcon.astro";
+import getServices from "@/core/content/data/service.ts";
+import type {Locale} from "@/core/types/Locales.ts";
+import CodeIcon from "@/core/assets/icons/system/CodeIcon.astro";
+import getCoreSkills from "@/core/content/data/coreSkills.ts";
+import GameIcon from "@/core/assets/icons/system/GameIcon.astro";
+import getNerdThings from "@/core/content/data/nerdThings.ts";
+import MusicIcon from "@/core/assets/icons/system/MusicIcon.astro";
+import getPurpose from "@/core/content/purpose.ts";
+import BuildIcon from "@/core/assets/icons/system/BuildIcon.astro";
+const locale = Astro.currentLocale!;
+const systemLabels = (await getCollection("system",
+  entry => entry.id.startsWith(locale.substring(0,2))))![0];
+const resumeCollection = (
+  await getCollection("resume", entry => {if(entry.id.startsWith(locale.substring(0,2))) return entry})
+)[0]
+const resume = {
+  title: resumeCollection.data.title,
+  content: (await render(resumeCollection)).Content
+}
+const services = await getServices(locale as Locale);
+const core = await getCoreSkills();
+const hobbies = await getNerdThings(locale as Locale);
+const purpose = await getPurpose(locale as Locale);
+---
+<SectionLayout description="resume, hobbies, etc..." id="about" title="about janz">
+  <div class="about_container">
+    <AboutCard className="col-span-2" title={resume.title}>
+      <PersonIcon slot="icon"/>
+      <resume.content />
+    </AboutCard>
+    <AboutCard title={systemLabels.data.purpose} className="col-span-2">
+      <BuildIcon slot="icon"/>
+      {purpose}
+    </AboutCard>
+    <AboutCard title={systemLabels.data.interests}>
+      <GameIcon slot="icon" />
+      <div class="flex flex-col gap-4">
+        <ul class="grid gap-1.5">
+          {hobbies.music.map(music => (
+            <li class="flex items-center justify-between">
+              {music.name}
+              <div class="flex items-center gap-0.5">
+                {Array.from({length: music.preference}).map((_, i)=> (
+                  <figure class="w-5 h-5 text-primary-active">
+                    <MusicIcon />
+                  </figure>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ul>
+        <ul class="flex items-center gap-1 flex-wrap">
+          {hobbies.hobbies.map(hobb => (
+            <li class="px-2 py-0.5 rounded-md bg-muted text-sm capitalize">{hobb}</li>
+          ))}
+        </ul>
+      </div>
+    </AboutCard>
+    <AboutCard title={systemLabels.data.skills} className="col-span-2">
+      <CodeIcon slot="icon"/>
+      <ul class="grid grid-cols-3 gap-2">
+        {core.map(skill => (
+          <li class="flex items-center gap-2 font-light capitalize">
+            <figure style={{background: skill.color.bg, color: skill.color.text}} class="w-7 h-7 p-0.5 rounded-md">
+              <skill.icon/>
+            </figure>
+            {skill.label}
+          </li>
+        ))}
+      </ul>
+    </AboutCard>
+    <AboutCard title={systemLabels.data.services}>
+      <ServiceIcon slot="icon"/>
+      <ul class="grid grid-cols-2 gap-2">
+        {services.sort((a,b) => b.proficiency-a.proficiency).slice(0,5).map(service => (
+          <li class="flex items-center gap-1">
+            <figure class="w-[3px] h-full bg-primary rounded-l-md"/>
+            {service.name}
+          </li>
+        ))}
+      </ul>
+    </AboutCard>
+  </div>
+</SectionLayout>

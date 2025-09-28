@@ -1,5 +1,9 @@
 header {
-  height: 70px;
+  height: var(--header);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  align-self: center;
   width: 95%;
   border-radius: 0 0 12px 12px;
   border: 1px solid var(--border-focus);
@@ -7,6 +11,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 30px;
+}
+.false_header{
+  height: calc(var(--header) + var(--gap));
 }
 
 .title{

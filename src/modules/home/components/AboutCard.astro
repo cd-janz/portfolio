@@ -1,0 +1,39 @@
+---
+import clsx from "clsx";
+interface Props{
+  title: string
+  className?: string;
+}
+const {title, className} = Astro.props;
+---
+<div class={clsx("card_container", className)}>
+  <div class="card_title">
+    <figure class="card_title-figure"><slot name="icon" /></figure>
+    <h4 class="text-3xl">{title}</h4>
+  </div>
+  <div class="font-light text-base">
+    <slot/>
+  </div>
+</div>
+<style is:inline>
+  .card_title{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .card_title-figure{
+    padding: 5px;
+    width: 32px;
+    height: 32px;
+    background: var(--primary-disabled);
+    color: var(--text-alternative);
+    border-radius: 8px;
+  }
+  .card_container{
+    width: 100%;
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import "@/core/styles/section.css"
+import PersonIcon from "@/core/assets/icons/system/PersonIcon.astro";
+interface Props{
+  id: string;
+  title: string;
+  description: string;
+}
+const { id, title, description } = Astro.props;
+---
+<section id={id} class="group">
+  <div class="section_header">
+    <div class="section_decoration">
+      <figure class="section_decoration-line"/>
+      <figure class="section_decoration-icon">
+        <PersonIcon/>
+      </figure>
+      <figure class="section_decoration-line"/>
+    </div>
+    <div class="flex flex-col items-center justify-center">
+      <h3 class="section-title font-semibold">{title}</h3>
+      <h5 class="section-description font-light">{description}</h5>
+    </div>
+  </div>
+  <slot/>
+</section>
