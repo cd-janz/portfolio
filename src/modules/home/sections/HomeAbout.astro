@@ -2,7 +2,6 @@
 import SectionLayout from "@/core/layouts/SectionLayout.astro"
 import "../styles/about.css"
 import AboutCard from "@/home/components/AboutCard.astro";
-import {getCollection, render} from "astro:content";
 import PersonIcon from "@/core/assets/icons/system/PersonIcon.astro";
 import ServiceIcon from "@/core/assets/icons/system/ServiceIcon.astro";
 import getServices from "@/core/content/data/service.ts";
@@ -12,34 +11,33 @@ import getCoreSkills from "@/core/content/data/coreSkills.ts";
 import GameIcon from "@/core/assets/icons/system/GameIcon.astro";
 import getNerdThings from "@/core/content/data/nerdThings.ts";
 import MusicIcon from "@/core/assets/icons/system/MusicIcon.astro";
-import getPurpose from "@/core/content/purpose.ts";
 import BuildIcon from "@/core/assets/icons/system/BuildIcon.astro";
+import {getEntry, render} from "astro:content";
 const locale = Astro.currentLocale!;
-const systemLabels = (await getCollection("system",
-  entry => entry.id.startsWith(locale.substring(0,2))))![0];
-const resumeCollection = (
-  await getCollection("resume", entry => {if(entry.id.startsWith(locale.substring(0,2))) return entry})
-)[0]
-const resume = {
-  title: resumeCollection.data.title,
-  content: (await render(resumeCollection)).Content
-}
 const services = await getServices(locale as Locale);
 const core = await getCoreSkills();
 const hobbies = await getNerdThings(locale as Locale);
-const purpose = await getPurpose(locale as Locale);
+const {data, Content} = await ( async ()=> {
+  const entry = await getEntry("about", locale);
+  if(!entry) throw new Error("Could not find entry");
+  return {
+    data: entry.data,
+    Content: (await render(entry)).Content
+  }
+})();
 ---
-<SectionLayout description="resume, hobbies, etc..." id="about" title="about janz">
+<SectionLayout description={data.subtitle} id="about" title={data.title}>
+  <PersonIcon slot="icon"/>
   <div class="about_container">
-    <AboutCard className="col-span-2" title={resume.title}>
+    <AboutCard className="col-span-2" title={data.resume}>
       <PersonIcon slot="icon"/>
-      <resume.content />
+      <Content />
     </AboutCard>
-    <AboutCard title={systemLabels.data.purpose} className="col-span-2">
+    <AboutCard title={data.purpose} className="col-span-2">
       <BuildIcon slot="icon"/>
-      {purpose}
+      {data.purposeDat}
     </AboutCard>
-    <AboutCard title={systemLabels.data.interests}>
+    <AboutCard title={data.interests}>
       <GameIcon slot="icon" />
       <div class="flex flex-col gap-4">
         <ul class="grid gap-1.5">
@@ -63,7 +61,7 @@ const purpose = await getPurpose(locale as Locale);
         </ul>
       </div>
     </AboutCard>
-    <AboutCard title={systemLabels.data.skills} className="col-span-2">
+    <AboutCard title={data.skills} className="col-span-2">
       <CodeIcon slot="icon"/>
       <ul class="grid grid-cols-3 gap-2">
         {core.map(skill => (
@@ -76,7 +74,7 @@ const purpose = await getPurpose(locale as Locale);
         ))}
       </ul>
     </AboutCard>
-    <AboutCard title={systemLabels.data.services}>
+    <AboutCard title={data.services}>
       <ServiceIcon slot="icon"/>
       <ul class="grid grid-cols-2 gap-2">
         {services.sort((a,b) => b.proficiency-a.proficiency).slice(0,5).map(service => (

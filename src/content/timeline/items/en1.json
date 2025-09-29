@@ -1,0 +1,10 @@
+{
+  "title": "Bachelor’s in Systems Engineering",
+  "subtitle": "Universidad del Magdalena",
+  "description": "Academic training in engineering fundamentals with a focus on web development and software architectures.",
+  "startDate": "August 2019",
+  "type": "degree",
+  "status": "paused",
+  "achievement": [],
+  "technologies": ["React", "Spring Boot", "Java", "JavaScript", "TypeScript", "Python", "C", "Next.js", "Angular"]
+}

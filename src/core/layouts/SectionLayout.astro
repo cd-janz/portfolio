@@ -13,7 +13,7 @@ const { id, title, description } = Astro.props;
     <div class="section_decoration">
       <figure class="section_decoration-line"/>
       <figure class="section_decoration-icon">
-        <PersonIcon/>
+        <slot name="icon"/>
       </figure>
       <figure class="section_decoration-line"/>
     </div>

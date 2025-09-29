@@ -1,0 +1,16 @@
+{
+  "title": "educación y experiencia",
+  "subtitle": "Educación y experiencia integral. Detalla título profesional, bootcamps, cursos y certificaciones junto con experiencia laboral relevante y proyectos como freelance.",
+  "inProgress": "en progreso",
+  "done": "completado",
+  "paused": "pausado",
+  "canceled": "cancelado",
+  "degree": "título",
+  "course": "curso",
+  "bootcamp": "bootcamp",
+  "certification": "certificación",
+  "work": "trabajo",
+  "freelancer": "freelance",
+  "achievements": "logros destacados",
+  "technologies": "tecnologias"
+}

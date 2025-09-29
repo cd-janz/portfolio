@@ -6,7 +6,7 @@ import InstagramIcon from "@/core/assets/icons/social/InstagramIcon.astro"
 
 const position: Record<Locale, string> = {
   en: "Mid-level Fullstack Developer",
-  es: "Desarrollador(a) Fullstack Semisenior"
+  es: "Desarrollador Fullstack Semisenior"
 }
 const phrase: Record<Locale, string> = {
   en: "I prefer to be the first in a village than to be the second in Rome.",

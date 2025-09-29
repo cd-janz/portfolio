@@ -1,0 +1,10 @@
+{
+  "title": "Pregrado en Ingeniería de Sistemas",
+  "subtitle": "Universidad del Magdalena",
+  "description": "Formación en fundamentos de ingeniería con énfasis en desarrollo web y arquitecturas de software.",
+  "startDate": "agosto 2019",
+  "type": "degree",
+  "status": "paused",
+  "achievement": [],
+  "technologies": ["React", "Spring Boot", "Java", "JavaScript", "TypeScript", "Python", "C", "Next.js", "Angular"]
+}

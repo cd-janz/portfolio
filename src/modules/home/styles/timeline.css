@@ -1,0 +1,26 @@
+.timeline_container{
+  width: 100%;
+  height: fit-content;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 5px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timeline_item{
+  width: 80%;
+  height: fit-content;
+  justify-self: center;
+  interpolate-size: allow-keywords;
+  border: 1px solid var(--border);
+  padding: 10px;
+  background: var(--muted);
+  border-radius: 12px;
+}
+.timeline_item:hover{
+  box-shadow: 5px 10px 5px var(--muted);
+  border-color: var(--border-focus);
+}

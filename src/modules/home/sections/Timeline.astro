@@ -1,0 +1,64 @@
+---
+import "../styles/timeline.css"
+import SectionLayout from "@/core/layouts/SectionLayout.astro";
+import LibraryIcon from "@/core/assets/icons/system/LibraryIcon.astro";
+import {getCollection, getEntry} from "astro:content";
+import clsx from "clsx";
+const locale = Astro.currentLocale!;
+const data = await (async()=> {
+  const data = await getEntry("timeline", locale);
+  if(!data) throw new Error("no entry found");
+  return data.data
+})();
+const items = (await getCollection("timelineItem",
+  entry => entry.id.startsWith(locale))
+).map((entry) => entry.data);
+---
+<SectionLayout title={data.title} id="education" description={data.subtitle}>
+  <LibraryIcon slot="icon"/>
+  <div class="timeline_container">
+    <figure class="absolute top-0 left-1/2 w-[2px] rounded-md h-full bg-border"/>
+    {items.map(item => (
+      <div class="timeline_item">
+        <div class="flex items-center gap-2 justify-end">
+          <h4 class="capitalize font-light">
+            {item.type==="degree" && data.degree}
+          </h4>
+          <figure class={clsx("w-8 h-8 p-1 rounded-full",
+            item.type==="degree" && "text-indigo-600 bg-indigo-100")}
+          >
+            {item.type==="degree" && (<LibraryIcon/>)}
+          </figure>
+        </div>
+        <h5 class="font-bold text-xl">{item.title}</h5>
+        <h6 class="font-semibold pl-1.5">{item.subtitle}</h6>
+        <div class="flex items-center gap-2 pl-3 font-poppins font-light">
+          <p class="capitalize">
+            {item.startDate} - {item.endDate ? item.endDate : (
+            <span class="text-amber-400">{data.paused}</span>
+          )}
+          </p>
+        </div>
+        <p class="px-3 py-1.5 italic font-light">"{item.description}"</p>
+        {item.achievement.length > 0 && (
+          <div>
+            <h3 class="text-sm">{data.achievements}</h3>
+            <ul></ul>
+          </div>
+        )}
+        {item.technologies.length > 0 && (
+          <div class="flex flex-col gap-1">
+            <h3 class="capitalize font-semibold">{data.technologies}</h3>
+            <ul class="flex items-center gap-1.5 flex-wrap">
+              {item.technologies.map(tech => (
+                <li class="font-light text-sm px-2 py-0.5 bg-surface rounded-md">
+                  <p>{tech}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+</SectionLayout>
