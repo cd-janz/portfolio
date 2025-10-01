@@ -1,0 +1,19 @@
+{
+  "title": "Full Stack Developer Semi Senior",
+  "subtitle": "Ingeniería Gestión y Desarrollo (IGD S.A.S)",
+  "description": "Responsible for leading the technological evolution of the platform, driving improvements in architecture, performance, and security.",
+  "startDate": "February 2024",
+  "endDate": "March 2025",
+  "type": "work",
+  "status": "done",
+  "achievement": [
+    "Led the development of the main frontend, optimizing the architecture and reducing delivery times by 12%.",
+    "Redesigned the core system architecture, improving performance, scalability, and concurrency.",
+    "Spearheaded the modernization of the codebase, reducing technical debt and increasing maintainability.",
+    "Migrated the internal platform to a modern stack, enhancing security and reducing response times by 17%.",
+    "Implemented agile methodologies that shortened development cycles and reduced production issues.",
+    "Coordinated multidisciplinary teams in medium-complexity projects, fostering collaboration and continuous delivery."
+  ],
+  "technologies": ["React", "Next.js", "Express", "TypeScript", "C#", "ASP.NET Core", "Entity Framework", "Java", "Spring Boot", "Angular", "NestJS"],
+  "documentPath": "/documents/esIGD2.pdf"
+}

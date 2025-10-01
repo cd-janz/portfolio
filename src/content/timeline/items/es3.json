@@ -1,0 +1,12 @@
+{
+  "title": "Introduction to Android Mobile Application Development",
+  "subtitle": "Meta - Coursera",
+  "description": "Curso introductorio al desarrollo de aplicaciones móviles utilizando Kotlin y Android Studio.",
+  "startDate": "febrero 2024",
+  "endDate": "febrero 2024",
+  "type": "course",
+  "status": "done",
+  "achievement": [],
+  "technologies": ["Kotlin", "Android Studio"],
+  "documentPath": "https://coursera.org/share/48ca8bb2160d0eb9ec5e1b671ff490d2"
+}

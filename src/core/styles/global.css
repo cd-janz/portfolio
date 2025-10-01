@@ -58,6 +58,7 @@ body {
   align-items: center;
   font-family: "Poppins", sans-serif;
   padding-bottom: 15px;
+  scroll-behavior: smooth;
 }
 
 .main{

@@ -36,8 +36,13 @@ const locale = Astro.currentLocale!;
   </body>
 </html>
 <script>
+  document.addEventListener("scrollend", () => {
+    const top = document.body.scrollTop;
+    localStorage.setItem("scrollY", top.toString())
+  })
   document.addEventListener("astro:page-load", ()=> {
     const top = localStorage.getItem("scrollY");
     if(!top) return;
+    document.body.scrollTo({behavior: "smooth", top: Number(top)});
   })
 </script>

@@ -1,0 +1,30 @@
+.categories_container{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skills_category-container{
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills_category-title{
+  font-size: 1.35rem;
+}
+
+.skills_items-container{
+  border: 1px solid var(--border);
+  background: var(--muted);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.skills-item{
+  background: var(--surface);
+  gap: 5px;
+  padding: 10px 5px;
+  border-radius: 10px;
+}

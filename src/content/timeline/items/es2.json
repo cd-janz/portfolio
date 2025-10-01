@@ -1,0 +1,12 @@
+{
+  "title": "Oracle Next Education F2 T5 Back-end",
+  "subtitle": "Alura Latam & Oracle Next Education",
+  "description": "Bootcamp especializado en desarrollo backend con Java y Spring Boot, aplicando buenas prácticas y fundamentos de bases de datos.",
+  "startDate": "abril 2023",
+  "endDate": "octubre 2023",
+  "type": "bootcamp",
+  "status": "done",
+  "achievement": [],
+  "technologies": ["Java", "Spring Boot", "HTML", "CSS", "JavaScript", "Hibernate", "JPA"],
+  "documentPath": "https://app.aluracursos.com/program/certificate/04e0e6e8-97b9-4234-841a-917e612d11ca"
+}

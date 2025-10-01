@@ -1,0 +1,19 @@
+{
+  "title": "Desarrollador Full Stack Semi Senior",
+  "subtitle": "Ingeniería Gestión y Desarrollo (IGD S.A.S)",
+  "description": "Encargado de liderar la evolución tecnológica de la plataforma, impulsando mejoras en arquitectura, rendimiento y seguridad.",
+  "startDate": "febrero 2024",
+  "endDate": "marzo 2025",
+  "type": "work",
+  "status": "done",
+  "achievement": [
+    "Lideré el desarrollo del frontend principal, optimizando la arquitectura y reduciendo en un 12% los tiempos de entrega.",
+    "Rediseñé la arquitectura del sistema central, mejorando el rendimiento, la escalabilidad y la concurrencia.",
+    "Encabecé la modernización del código base, disminuyendo la deuda técnica y aumentando la mantenibilidad.",
+    "Migré la plataforma interna a un stack moderno, fortaleciendo la seguridad y reduciendo en un 17% los tiempos de respuesta.",
+    "Implementé metodologías ágiles que acortaron los ciclos de desarrollo y redujeron fallos en producción.",
+    "Coordiné equipos multidisciplinarios en proyectos de mediana complejidad, impulsando la colaboración y la entrega continua."
+  ],
+  "technologies": ["React", "Next.js", "Express", "TypeScript", "C#", "ASP.NET Core", "Entity Framework", "Java", "Spring Boot", "Angular", "NestJS"],
+  "documentPath": "/documents/enIGD2.pdf"
+}

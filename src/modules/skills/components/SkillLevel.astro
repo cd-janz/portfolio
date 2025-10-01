@@ -1,0 +1,20 @@
+---
+import clsx from "clsx";
+interface Props{
+  label: string,
+  level: number,
+}
+const {label, level} = Astro.props;
+---
+<div class="flex items-center gap-1 px-2 h-fit">
+  <p class="text-sm font-light italic capitalize">{label}</p>
+  <div class="grid grid-cols-10 gap-[1px] w-full items-center rounded-xl overflow-hidden bg-muted">
+    {Array.from({length: level}).map((_, index) => (
+      <figure class={clsx("h-3",
+        [0,1].includes(index) && "bg-rose-400", [2,3].includes(index) && "bg-orange-400",
+        [4,5].includes(index) && "bg-yellow-400", [6,7].includes(index) && "bg-emerald-400",
+        [8,9].includes(index) && "bg-sky-400"
+      )}/>
+    ))}
+  </div>
+</div>

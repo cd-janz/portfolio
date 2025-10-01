@@ -41,14 +41,26 @@ const timelineItem = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string(),
-    description: z.string(),
+    description: z.optional(z.string()),
     startDate: z.string(),
     endDate: z.optional(z.string()),
     type: z.enum(["degree", "work", "freelancer", "course", "bootcamp", "certification"]),
     status: z.enum(["done", "paused", "canceled", "in progress"]),
     achievement: z.array(z.string()),
     technologies: z.array(z.string()),
+    documentPath: z.optional(z.string()),
   })
 })
 
-export const collections = { about, timeline, timelineItem }
+const skills = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/skills/"}),
+  schema: z.object({
+    title: z.string(),
+    subtitle: z.string(),
+    frequency: z.string(),
+    proficiency: z.string(),
+    seeMore: z.string(),
+  })
+})
+
+export const collections = { about, timeline, timelineItem, skills }

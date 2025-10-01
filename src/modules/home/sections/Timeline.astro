@@ -4,6 +4,10 @@ import SectionLayout from "@/core/layouts/SectionLayout.astro";
 import LibraryIcon from "@/core/assets/icons/system/LibraryIcon.astro";
 import {getCollection, getEntry} from "astro:content";
 import clsx from "clsx";
+import TimelineCard from "@/home/components/TimelineCard.astro";
+import DegreeIcon from "@/core/assets/icons/system/DegreeIcon.astro";
+import BootcampIcon from "@/core/assets/icons/system/BootcampIcon.astro";
+import WorkIcon from "@/core/assets/icons/system/WorkIcon.astro";
 const locale = Astro.currentLocale!;
 const data = await (async()=> {
   const data = await getEntry("timeline", locale);
@@ -18,16 +22,22 @@ const items = (await getCollection("timelineItem",
   <LibraryIcon slot="icon"/>
   <div class="timeline_container">
     <figure class="absolute top-0 left-1/2 w-[2px] rounded-md h-full bg-border"/>
-    {items.map(item => (
-      <div class="timeline_item">
+    {items.sort((a,b) => a.achievement.length - b.achievement.length).map(item => (
+      <TimelineCard path={item.documentPath} download={item.documentPath?.startsWith("/") ? "experience" : undefined}>
         <div class="flex items-center gap-2 justify-end">
           <h4 class="capitalize font-light">
-            {item.type==="degree" && data.degree}
+            {data[item.type]}
           </h4>
-          <figure class={clsx("w-8 h-8 p-1 rounded-full",
-            item.type==="degree" && "text-indigo-600 bg-indigo-100")}
-          >
-            {item.type==="degree" && (<LibraryIcon/>)}
+          <figure class={clsx("w-9 h-9 p-1 rounded-full",
+            item.type==="degree" && "text-indigo-600 bg-indigo-100",
+            item.type==="course" && "text-blue-600 bg-blue-100",
+            item.type==="bootcamp" && "text-rose-600 bg-rose-100",
+            item.type==="work" && "text-gray-600 bg-gray-200",
+          )}>
+            {item.type==="degree" && (<DegreeIcon/>)}
+            {item.type==="course" && (<LibraryIcon/>)}
+            {item.type==="bootcamp" && (<BootcampIcon/>)}
+            {item.type==="work" && (<WorkIcon/>)}
           </figure>
         </div>
         <h5 class="font-bold text-xl">{item.title}</h5>
@@ -39,11 +49,17 @@ const items = (await getCollection("timelineItem",
           )}
           </p>
         </div>
-        <p class="px-3 py-1.5 italic font-light">"{item.description}"</p>
+        {item.description && (
+          <p class="px-3 py-1.5 italic font-light">"{item.description}"</p>
+        )}
         {item.achievement.length > 0 && (
           <div>
-            <h3 class="text-sm">{data.achievements}</h3>
-            <ul></ul>
+            <h3 class="capitalize">{data.achievements}</h3>
+            <ul class="text-sm list-disc pl-5 font-medium font-poppins">
+              {item.achievement.map( achievement => (
+                <li>{achievement}</li>
+              ))}
+            </ul>
           </div>
         )}
         {item.technologies.length > 0 && (
@@ -58,7 +74,7 @@ const items = (await getCollection("timelineItem",
             </ul>
           </div>
         )}
-      </div>
+      </TimelineCard>
     ))}
   </div>
 </SectionLayout>

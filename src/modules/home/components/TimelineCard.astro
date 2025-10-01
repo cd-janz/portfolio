@@ -1,0 +1,16 @@
+---
+interface Props{
+  path?: string
+  download?: string
+}
+const {path, download} = Astro.props;
+---
+{path ? (
+  <a href={path} target="_blank" rel="noopener noreferrer" class="timeline_item">
+    <slot />
+  </a>
+  ): (
+  <div class="timeline_item">
+    <slot />
+  </div>
+  )}

@@ -1,0 +1,12 @@
+{
+  "title": "Full Stack Developer",
+  "subtitle": "Ingeniería Gestión y Desarrollo (IGD S.A.S)",
+  "description": "Responsible for designing, modernizing, and optimizing the internal platform, leading architecture initiatives and agile methodologies.",
+  "startDate": "January 2021",
+  "endDate": "February 2024",
+  "type": "work",
+  "status": "done",
+  "achievement": [],
+  "technologies": ["React", "Next.js", "Express", "TypeScript", "C#", "ASP.NET Core", "Entity Framework", "Java", "Spring Boot", "Angular", "NestJS"],
+  "documentPath": "/documents/enIGD1.pdf"
+}
