@@ -1,0 +1,45 @@
+.contact_container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+
+.contact_form-container{
+  width: 100%;
+  border: 1px solid var(--border);
+  padding: 20px 40px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact_input{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.contact_input > label{
+  font-weight: 200;
+  font-size: medium;
+  text-transform: capitalize;
+  font-style: italic;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.contact-input{
+  padding: 8px 10px;
+  border: 1px solid var(--border-disabled);
+  border-radius: 8px;
+  background: var(--muted);
+  font-weight: 300;
+}
+.contact-input::placeholder{
+  color: var(--text-disabled);
+  font-family: "Victor Mono", monospace, sans-serif !important;
+  font-size: small;
+}
+.contact-input:focus{
+  outline-color: var(--border-focus);
+}

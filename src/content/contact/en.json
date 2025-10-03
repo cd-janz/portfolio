@@ -1,0 +1,20 @@
+{
+  "title": "Contact Us",
+  "description": "Please complete the form and we will respond as soon as possible.",
+  "name": "Full Name",
+  "nameContent": "Enter your full name",
+  "email": "Email Address",
+  "emailContent": "your@email.com",
+  "subject": "Subject",
+  "subjectContent": "How may we assist you?",
+  "message": "Message",
+  "messageContent": "Please provide the details of your inquiry.",
+  "phone": "Whatsapp or Telegram",
+  "phoneContent": "+57 3xx xxx xxxx",
+  "title2": "Contact Information",
+  "answer": "You will receive a response within 24 hours.",
+  "schedule": "Available every day, 24 hours a day, 7 days a week.",
+  "able": "Open to remote collaboration opportunities",
+  "social": "Social Media",
+  "submit": "submit"
+}

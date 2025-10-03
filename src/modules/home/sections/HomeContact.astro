@@ -1,0 +1,13 @@
+---
+import SectionLayout from "@/core/layouts/SectionLayout.astro"
+import Contact from "@/core/components/organisms/Contact.astro"
+import type {Locale} from "@/core/types/Locales.ts";
+import EmailIcon from "@/icons/system/EmailIcon.astro";
+const locale = Astro.currentLocale as Locale;
+const titles: Record<Locale, string> = {en: "contact", es: "contacto"};
+const descriptions: Record<Locale, string> = {en: "I´m here to assist you. Share your inquiry and Ill get back to you promptly.", es: "Estoy a su disposición. Envíame su consulta y le respondere con prontitud."};
+---
+<SectionLayout description={descriptions[locale]} id="contact" title={titles[locale]}>
+  <EmailIcon slot="icon" />
+  <Contact />
+</SectionLayout>

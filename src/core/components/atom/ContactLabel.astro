@@ -1,0 +1,17 @@
+---
+import MandatoryIcon from "@/icons/system/MandatoryIcon.astro";
+interface Props{
+  nameFor: string,
+  label: string,
+  required?: boolean,
+}
+const {nameFor, label, required} = Astro.props;
+---
+<label for={nameFor}>
+  {label}
+  {required && (
+    <span class="text-rose-500 w-5 h-5">
+      <MandatoryIcon/>
+    </span>
+  )}
+</label>

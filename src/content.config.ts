@@ -63,4 +63,28 @@ const skills = defineCollection({
   })
 })
 
-export const collections = { about, timeline, timelineItem, skills }
+const contact = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/contact/"}),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    name: z.string(),
+    nameContent: z.string(),
+    email: z.string(),
+    emailContent: z.string(),
+    phone: z.string(),
+    phoneContent: z.string(),
+    subject: z.string(),
+    subjectContent: z.string(),
+    message: z.string(),
+    messageContent: z.string(),
+    title2: z.string(),
+    answer: z.string(),
+    schedule: z.string(),
+    able: z.string(),
+    social: z.string(),
+    submit: z.string(),
+  })
+})
+
+export const collections = { about, timeline, timelineItem, skills, contact }

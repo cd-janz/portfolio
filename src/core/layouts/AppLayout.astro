@@ -3,10 +3,12 @@ import "@/core/styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import Header from "@/core/components/organisms/Header.astro";
 import ProfileCard from "@/core/components/organisms/ProfileCard.astro";
+import clsx from "clsx";
 interface Props {
   title: string;
+  className?: string;
 }
-const { title } = Astro.props;
+const { title, className } = Astro.props;
 const locale = Astro.currentLocale!;
 ---
 
@@ -29,7 +31,7 @@ const locale = Astro.currentLocale!;
         <ProfileCard />
         <slot name="card" />
       </div>
-      <main id="main">
+      <main id="main" class={clsx(className)}>
         <slot/>
       </main>
     </div>

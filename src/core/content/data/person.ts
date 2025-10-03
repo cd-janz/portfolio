@@ -19,6 +19,7 @@ export default async function getPersonData(locale: Locale): Promise<IPerson> {
     email: "jczp_020401@hotmail.com",
     phoneNumber: "+57 305 472 5724",
     position: position[locale] ?? position.en,
+    location: "Santa Marta, Colombia",
     nickname: "janz",
     phrase: phrase[locale] ?? phrase.en,
     social: [

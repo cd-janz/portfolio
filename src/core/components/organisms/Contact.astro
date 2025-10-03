@@ -1,0 +1,29 @@
+---
+import "@/core/styles/contact.css"
+import {getEntry} from "astro:content";
+import ContactInput from "@/core/components/molecules/ContactInput.astro";
+import ContactTextArea from "@/core/components/molecules/ContactTextArea.astro";
+import ContactSubmit from "@/core/components/atom/ContactSubmit.astro";
+import ContactInfo from "@/core/components/organisms/ContactInfo.astro";
+const t = (await getEntry("contact", Astro.currentLocale!))!.data;
+---
+<div class="contact_container">
+  <div class="contact_form-container">
+    <div class="flex flex-col gap-y-2">
+      <h4 class="text-2xl font-bold">{t.title}</h4>
+      <p class="font-light">{t.description}</p>
+    </div>
+    <form class="grid grid-cols-2 gap-x-5 gap-y-3" id="contactForm">
+      <ContactInput type="text" name="name" label={t.name} placeholder={t.nameContent} className="col-span-2"
+        required />
+      <ContactInput label={t.email} name="email" placeholder={t.emailContent} type="email" required />
+      <ContactInput label={t.phone} name="phone" placeholder={t.phoneContent} type="text" />
+      <ContactInput label={t.subject} name="subject" placeholder={t.subjectContent} type="text" className="col-span-2"
+        required />
+      <ContactTextArea name="message" label={t.message} placeholder={t.messageContent} required />
+      <ContactSubmit id="submit" label={t.submit} />
+    </form>
+  </div>
+  <ContactInfo titleInfo={t.title2} socialInfo={t.social} answer={t.answer} able={t.able} schedule={t.schedule} />
+</div>
+<script src="../../scripts/contact.ts"/>

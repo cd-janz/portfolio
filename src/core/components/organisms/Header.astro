@@ -22,7 +22,11 @@ console.log(url.pathname);
     {app.nav.map((item, index) => (
       <li class="w-fit h-fit">
         <a href={getRelativeLocaleUrl(locale, item.path)}
-           class={clsx("nav-item", getRelativeLocaleUrl(locale, item.path) === url.pathname && "active")}>
+           class={clsx("nav-item",
+             getRelativeLocaleUrl(locale, item.path).startsWith(url.pathname) &&
+             getRelativeLocaleUrl(locale, item.path).length <= url.pathname.length+1
+             && "active"
+           )}>
           {item.label}
         </a>
       </li>

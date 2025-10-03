@@ -1,0 +1,20 @@
+---
+import clsx from "clsx";
+import ContactLabel from "@/core/components/atom/ContactLabel.astro";
+interface Props{
+  name: string,
+  label: string,
+  type: "text" | "email",
+  placeholder: string,
+  className?: string
+  required?: boolean
+}
+const {
+  name, label, type, placeholder, className, required
+} = Astro.props;
+---
+<div class={clsx("contact_input", className)}>
+  <ContactLabel label={label} nameFor={name} required={required}/>
+  <!-- just ignore warning, label already exist, it's a component !-->
+  <input id={name} name={name} placeholder={placeholder} class="contact-input" type={type} required={required}/>
+</div>

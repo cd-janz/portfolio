@@ -3,11 +3,11 @@ import type {Locale} from "@/core/types/Locales.ts";
 
 
 const labels: Record<Locale, string[]> = {
-  en: ["home", "skills", "projects", "blogs"],
-  es: ["inicio", "habilidades", "proyectos", "blogs"],
+  en: ["home", "skills", "projects", "contact", "blogs"],
+  es: ["inicio", "habilidades", "proyectos", "contacto", "blogs"],
 };
 
-const paths = ["", "skills", "projects", "blogs"];
+const paths = ["", "skills", "projects", "contact", "blogs"];
 
 export default async function getAppData(locale: Locale): Promise<IApp> {
   const items = labels[locale] ?? labels.en;

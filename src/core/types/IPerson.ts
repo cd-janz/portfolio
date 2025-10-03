@@ -5,6 +5,7 @@ export default interface IPerson {
   email: string;
   phoneNumber: string;
   position: string;
+  location: string;
   phrase: string;
   social: IPersonSocial[]
 }

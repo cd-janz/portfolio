@@ -1,0 +1,20 @@
+{
+  "title": "Contáctenos",
+  "description": "Por favor complete el formulario y le responderemos a la mayor brevedad posible.",
+  "name": "Nombre completo",
+  "nameContent": "Ingrese su nombre completo",
+  "email": "Correo electrónico",
+  "emailContent": "su@email.com",
+  "subject": "Asunto",
+  "subjectContent": "¿En qué podemos asistirle?",
+  "message": "Mensaje",
+  "messageContent": "Por favor, indique los detalles de su consulta.",
+  "phone": "WhatsApp o Telegram",
+  "phoneContent": "+57 3xx xxx xxxx",
+  "title2": "Información de contacto",
+  "answer": "Recibirá una respuesta en un plazo máximo de 24 horas.",
+  "schedule": "Disponible todos los días, las 24 horas, los 7 días de la semana.",
+  "able": "Abierto a oportunidades de colaboración remota",
+  "social": "Redes sociales",
+  "submit": "enviar"
+}
