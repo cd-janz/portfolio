@@ -13,8 +13,13 @@
       ],
       "@/skills/*": [
         "modules/skills/*"
+      ],
+      "@/projects/*": [
+        "modules/projects/*"
       ]
     },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   },
   "extends": "astro/tsconfigs/strict",
   "include": [

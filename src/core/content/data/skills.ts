@@ -19,3 +19,14 @@ export default async function getSkills(locale: Locale): Promise<ISkillCategory[
     { name: names[locale][4], items: [aws, docker, azure, kubernetes, linux, nginx, terraform]}
   ]
 }
+
+export const getLanguages = () =>
+  [java, csharp, kotlin, typescript, sql, rust, c, go, zig, lua, bash]
+    .sort((a,b)=> b.frequency - a.frequency);
+
+export const getTechnologies = () => [
+  angular, next,react,astro, remix, yew, leptos,
+  spring, nest, dotnet, rocket, actix, fiber, gin, gok,
+  mariadb, mysql, mongo, redis, sqlite, postgresql,
+  aws, docker, azure, kubernetes, linux, nginx, terraform
+]

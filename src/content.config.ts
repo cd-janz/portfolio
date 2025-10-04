@@ -87,4 +87,24 @@ const contact = defineCollection({
   })
 })
 
-export const collections = { about, timeline, timelineItem, skills, contact }
+const projects = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/projects/"}),
+  schema: z.object({
+    filterTitle: z.string(),
+    category: z.string(),
+    language: z.string(),
+    technology: z.string(),
+  })
+})
+
+const projectItem = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/projects/items/"}),
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    type: z.string(), // web app, web page, productivity app, etc etc.
+    architecture: z.string(),
+  })
+})
+
+export const collections = { about, timeline, timelineItem, skills, contact, projectItem, projects }

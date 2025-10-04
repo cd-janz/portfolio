@@ -1,0 +1,11 @@
+---
+import AppLayout from "@/core/layouts/AppLayout.astro";
+import DynamicProjectView from "@/projects/views/DynamicProjectView.tsx";
+import type {Locale} from "@/core/types/Locales.ts";
+import getProjects from "@/projects/content/getProjects.ts";
+const locale = Astro.currentLocale!;
+const projects = await getProjects(locale);
+---
+<AppLayout title="Projects" className="pt-5 px-5">
+  <DynamicProjectView client:only locale={locale as Locale} projects={projects} />
+</AppLayout>

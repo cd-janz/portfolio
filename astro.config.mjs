@@ -4,11 +4,15 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from "@tailwindcss/vite";
 
+import react from "@astrojs/react";
+
+import mdx from "@astrojs/mdx";
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  integrations: [sitemap()],
+  integrations: [sitemap(), react(), mdx()],
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
