@@ -1,14 +1,13 @@
 ---
-import "@/core/styles/header.css";
-import BugIcon from "@/core/assets/icons/system/BugIcon.astro";
-import getAppData from "@/core/content/data/app.ts";
+import "../../styles/header.css";
+import BugIcon from "../../assets/icons/system/BugIcon.astro";
+import getAppData from "../../content/data/app.ts";
 import {getRelativeLocaleUrl} from "astro:i18n";
-import type {Locale} from "@/core/types/Locales.ts";
+import type {Locale} from "../../types/Locales.ts";
 import clsx from "clsx";
 const locale = Astro.currentLocale!;
 const app = await getAppData(locale as Locale);
 const url = Astro.url;
-console.log(url.pathname);
 ---
 
 <header class="bg-surface backdrop-blur-md">

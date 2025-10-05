@@ -1,8 +1,8 @@
-import type {TFilter} from "@/projects/types/TFilter.ts";
-import "@/projects/styles/select.css"
+import type {TFilter} from "../../types/TFilter.ts";
+import "../../styles/select.css"
 import {useState} from "react";
 import clsx from "clsx";
-import CheckIcon from "@/icons/system/CheckIcon.tsx";
+import CheckIcon from "../../../../core/assets/icons/system/CheckIcon.tsx";
 
 interface Props{
   data: TFilter[]

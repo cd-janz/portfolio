@@ -1,5 +1,5 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import type {Locale} from "@/core/types/Locales.ts";
+import type {IDetailedSkill} from "../../../core/types/ISkill.ts";
+import type {Locale} from "../../../core/types/Locales.ts";
 
 export interface IProjectSchema{
   languages: string;

@@ -1,8 +1,8 @@
-import type IPerson from "@/core/types/IPerson.ts";
-import type {Locale} from "@/core/types/Locales.ts";
-import GithubIcon from "@/core/assets/icons/social/GithubIcon.astro"
-import TelegramIcon from "@/core/assets/icons/social/TelegramIcon.astro"
-import InstagramIcon from "@/core/assets/icons/social/InstagramIcon.astro"
+import type IPerson from "../../types/IPerson.ts";
+import type {Locale} from "../../types/Locales.ts";
+import GithubIcon from "../../assets/icons/social/GithubIcon.astro"
+import TelegramIcon from "../../assets/icons/social/TelegramIcon.astro"
+import InstagramIcon from "../../assets/icons/social/InstagramIcon.astro"
 
 const position: Record<Locale, string> = {
   en: "Mid-level Fullstack Developer",

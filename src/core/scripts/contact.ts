@@ -1,4 +1,4 @@
-import type IContactForm from "@/core/types/IContactForm.ts";
+import type IContactForm from "../types/IContactForm.ts";
 
 const form = document.getElementById("contactForm");
 if(!form) throw new Error("Could not find element");

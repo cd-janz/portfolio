@@ -1,10 +1,10 @@
-import type {ISkillCategory} from "@/core/types/ISkill.ts";
-import type {Locale} from "@/core/types/Locales.ts";
-import { bash, c, csharp, go, java, kotlin, lua, rust, sql, typescript, zig } from "@/core/content/data/languages";
-import {angular, next, react, astro, remix, yew, leptos} from "@/core/content/data/frontend"
-import {spring, nest, dotnet, rocket, actix, fiber, gin, gok} from "@/core/content/data/backend";
-import {mariadb,mongo,mysql,redis,sqlite,postgresql} from "@/core/content/data/databases";
-import {aws, docker, azure, kubernetes, linux, nginx, terraform} from "@/core/content/data/cloud"
+import type {ISkillCategory} from "../../types/ISkill.ts";
+import type {Locale} from "../../types/Locales.ts";
+import { bash, c, csharp, go, java, kotlin, lua, rust, sql, typescript, zig } from "./languages";
+import {angular, next, react, astro, remix, yew, leptos} from "./frontend"
+import {spring, nest, dotnet, rocket, actix, fiber, gin, gok} from "./backend";
+import {mariadb,mongo,mysql,redis,sqlite,postgresql} from "./databases";
+import {aws, docker, azure, kubernetes, linux, nginx, terraform} from "./cloud"
 
 const names: Record<Locale, string[]> = {
   en: ["languages", "frontend", "backend", "databases", "cloud"],

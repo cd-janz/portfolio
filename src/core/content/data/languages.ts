@@ -1,15 +1,15 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import JavaIcon from "@/icons/language/JavaIcon.astro"
-import KotlinIcon from "@/core/assets/icons/language/KotlinIcon.astro"
-import TypeScriptIcon from "@/core/assets/icons/language/TypeScriptIcon.astro"
-import SQLIcon from "@/core/assets/icons/language/SQLIcon.astro"
-import RustIcon from "@/core/assets/icons/language/RustIcon.astro"
-import CIcon from "@/core/assets/icons/language/CIcon.astro"
-import GoIcon from "@/core/assets/icons/language/GoIcon.astro"
-import ZigIcon from "@/core/assets/icons/language/zigIcon.astro"
-import LuaIcon from "@/core/assets/icons/language/LuaIcon.astro"
-import BashIcon from "@/core/assets/icons/language/BashIcon.astro"
-import DotnetIcon from "@/core/assets/icons/backend/DotNetIcon.astro"
+import type {IDetailedSkill} from "../../types/ISkill.ts";
+import JavaIcon from "../../assets/icons/language/JavaIcon.astro"
+import KotlinIcon from "../../assets/icons/language/KotlinIcon.astro"
+import TypeScriptIcon from "../../assets/icons/language/TypeScriptIcon.astro"
+import SQLIcon from "../../assets/icons/language/SQLIcon.astro"
+import RustIcon from "../../assets/icons/language/RustIcon.astro"
+import CIcon from "../../assets/icons/language/CIcon.astro"
+import GoIcon from "../../assets/icons/language/GoIcon.astro"
+import ZigIcon from "../../assets/icons/language/zigIcon.astro"
+import LuaIcon from "../../assets/icons/language/LuaIcon.astro"
+import BashIcon from "../../assets/icons/language/BashIcon.astro"
+import DotnetIcon from "../../assets/icons/backend/DotNetIcon.astro"
 
 export const java: IDetailedSkill = {
   icon: JavaIcon,

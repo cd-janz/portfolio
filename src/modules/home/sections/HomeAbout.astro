@@ -1,17 +1,17 @@
 ---
-import SectionLayout from "@/core/layouts/SectionLayout.astro"
+import SectionLayout from "../../../core/layouts/SectionLayout.astro"
 import "../styles/about.css"
-import AboutCard from "@/home/components/AboutCard.astro";
-import PersonIcon from "@/core/assets/icons/system/PersonIcon.astro";
-import ServiceIcon from "@/core/assets/icons/system/ServiceIcon.astro";
-import getServices from "@/core/content/data/service.ts";
-import type {Locale} from "@/core/types/Locales.ts";
-import CodeIcon from "@/core/assets/icons/system/CodeIcon.astro";
-import getCoreSkills from "@/core/content/data/coreSkills.ts";
-import GameIcon from "@/core/assets/icons/system/GameIcon.astro";
-import getNerdThings from "@/core/content/data/nerdThings.ts";
-import MusicIcon from "@/core/assets/icons/system/MusicIcon.astro";
-import BuildIcon from "@/core/assets/icons/system/BuildIcon.astro";
+import AboutCard from "../components/AboutCard.astro";
+import PersonIcon from "../../../core/assets/icons/system/PersonIcon.astro";
+import ServiceIcon from "../../../core/assets/icons/system/ServiceIcon.astro";
+import getServices from "../../../core/content/data/service.ts";
+import type {Locale} from "../../../core/types/Locales.ts";
+import CodeIcon from "../../../core/assets/icons/system/CodeIcon.astro";
+import getCoreSkills from "../../../core/content/data/coreSkills.ts";
+import GameIcon from "../../../core/assets/icons/system/GameIcon.astro";
+import getNerdThings from "../../../core/content/data/nerdThings.ts";
+import MusicIcon from "../../../core/assets/icons/system/MusicIcon.astro";
+import BuildIcon from "../../../core/assets/icons/system/BuildIcon.astro";
 import {getEntry, render} from "astro:content";
 const locale = Astro.currentLocale!;
 const services = await getServices(locale as Locale);

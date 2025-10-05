@@ -1,5 +1,3 @@
-import type {IColor} from "@/core/types/ISystem.ts";
-
 export interface ISkillCategory{
   name: string
   items: IDetailedSkill[]

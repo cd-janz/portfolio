@@ -1,5 +1,5 @@
-import type {Locale} from "@/core/types/Locales.ts";
-import type {IService} from "@/core/types/IService.ts";
+import type {Locale} from "../../types/Locales.ts";
+import type {IService} from "../../types/IService.ts";
 
 const title: Record<Locale, string[]> = {
   en: ["Web Frontend", "Backend", "Databases", "UI/UX Design"],

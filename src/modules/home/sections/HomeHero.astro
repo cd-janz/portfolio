@@ -1,12 +1,12 @@
 ---
-import "@/home/styles/hero.css"
-import type {Locale} from "@/core/types/Locales.ts";
+import "../styles/hero.css"
+import type {Locale} from "../../../core/types/Locales.ts";
 import Sphere from "../components/Sphere.astro"
-import getPersonData from "@/core/content/data/person.ts";
-import getHeroWelcome from "@/core/content/data/welcome.ts";
-import FixedStars from "@/home/components/FixedStars.astro";
-import DocumentIcon from "@/core/assets/icons/system/DocumentIcon.astro";
-import PhoneIcon from "@/core/assets/icons/system/PhoneIcon.astro";
+import getPersonData from "../../../core/content/data/person.ts";
+import getHeroWelcome from "../../../core/content/data/welcome.ts";
+import FixedStars from "../components/FixedStars.astro";
+import DocumentIcon from "../../../core/assets/icons/system/DocumentIcon.astro";
+import PhoneIcon from "../../../core/assets/icons/system/PhoneIcon.astro";
 const locale = Astro.currentLocale! as Locale;
 const welcome = await getHeroWelcome(locale);
 const data = await getPersonData(locale);

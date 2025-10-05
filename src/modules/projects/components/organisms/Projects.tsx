@@ -1,8 +1,8 @@
-import "@/projects/styles/projects.css"
-import type IProject from "@/projects/types/IProject.ts";
-import type {IProjectSchema} from "@/projects/types/IProject.ts";
-import ProjectCard from "@/projects/components/molecules/ProjectCard.tsx";
-import type {Locale} from "@/core/types/Locales.ts";
+import "../../styles/projects.css"
+import type IProject from "../../types/IProject.ts";
+import type {IProjectSchema} from "../../types/IProject.ts";
+import ProjectCard from "../molecules/ProjectCard.tsx";
+import type {Locale} from "../../../../core/types/Locales.ts";
 
 interface Props{
   data: IProject[];

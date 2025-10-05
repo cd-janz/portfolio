@@ -1,13 +1,13 @@
-import {getCategory, type ICategoryFilter, type IProjectSchema} from "@/projects/types/IProject.ts";
-import type IProject from "@/projects/types/IProject.ts";
+import {getCategory, type ICategoryFilter, type IProjectSchema} from "../types/IProject.ts";
+import type IProject from "../types/IProject.ts";
 import { useEffect, useMemo, useState} from "react";
-import type {Locale} from "@/core/types/Locales.ts";
-import ProjectFilters from "@/projects/components/organisms/ProjectFilters.tsx";
-import {getLanguages, getTechnologies} from "@/core/content/data/skills.ts";
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import Projects from "@/projects/components/organisms/Projects.tsx";
-import type {IFilterSchema, TFilter} from "@/projects/types/TFilter.ts";
-import getDateFilter from "@/projects/content/dateFilter.ts";
+import type {Locale} from "../../../core/types/Locales.ts";
+import ProjectFilters from "../components/organisms/ProjectFilters.tsx";
+import {getLanguages, getTechnologies} from "../../../core/content/data/skills.ts";
+import type {IDetailedSkill} from "../../../core/types/ISkill.ts";
+import Projects from "../components/organisms/Projects.tsx";
+import type {IFilterSchema, TFilter} from "../types/TFilter.ts";
+import getDateFilter from "../content/dateFilter.ts";
 
 const placeholder: Record<Locale, string> = {
   en: "select a",

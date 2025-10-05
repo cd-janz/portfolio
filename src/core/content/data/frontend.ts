@@ -1,10 +1,10 @@
-import type {IDetailedSkill} from "@/core/types/ISkill";
-import ReactIcon from "@/icons/frontend/ReactIcon.astro"
-import AngularIcon from "@/icons/frontend/AngularIcon.astro"
-import AstroIcon from "@/icons/frontend/AstroIcon.astro"
-import NextIcon from "@/icons/frontend/NextIcon.astro"
-import YewIcon from "@/icons/frontend/YewIcon.astro"
-import RustIcon from "@/icons/language/RustIcon.astro"
+import type {IDetailedSkill} from "../../types/ISkill";
+import ReactIcon from "../../assets/icons/frontend/ReactIcon.astro"
+import AngularIcon from "../../assets/icons/frontend/AngularIcon.astro"
+import AstroIcon from "../../assets/icons/frontend/AstroIcon.astro"
+import NextIcon from "../../assets/icons/frontend/NextIcon.astro"
+import YewIcon from "../../assets/icons/frontend/YewIcon.astro"
+import RustIcon from "../../assets/icons/language/RustIcon.astro"
 
 export const react: IDetailedSkill = {
   icon: ReactIcon,

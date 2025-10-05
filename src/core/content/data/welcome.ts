@@ -1,4 +1,4 @@
-import type {Locale} from "@/core/types/Locales.ts";
+import type {Locale} from "../../types/Locales.ts";
 
 const first: Record<Locale, string> = {
   en: "Hello, I am ...",

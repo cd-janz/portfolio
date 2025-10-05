@@ -1,13 +1,13 @@
 ---
 import "../styles/timeline.css"
-import SectionLayout from "@/core/layouts/SectionLayout.astro";
-import LibraryIcon from "@/core/assets/icons/system/LibraryIcon.astro";
+import SectionLayout from "../../../core/layouts/SectionLayout.astro";
+import LibraryIcon from "../../../core/assets/icons/system/LibraryIcon.astro";
 import {getCollection, getEntry} from "astro:content";
 import clsx from "clsx";
-import TimelineCard from "@/home/components/TimelineCard.astro";
-import DegreeIcon from "@/core/assets/icons/system/DegreeIcon.astro";
-import BootcampIcon from "@/core/assets/icons/system/BootcampIcon.astro";
-import WorkIcon from "@/core/assets/icons/system/WorkIcon.astro";
+import TimelineCard from "../components/TimelineCard.astro";
+import DegreeIcon from "../../../core/assets/icons/system/DegreeIcon.astro";
+import BootcampIcon from "../../../core/assets/icons/system/BootcampIcon.astro";
+import WorkIcon from "../../../core/assets/icons/system/WorkIcon.astro";
 const locale = Astro.currentLocale!;
 const data = await (async()=> {
   const data = await getEntry("timeline", locale);

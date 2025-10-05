@@ -1,7 +1,7 @@
-import type {IProjectCollection} from "@/projects/types/IProject.ts";
-import type IProject from "@/projects/types/IProject.ts";
+import type {IProjectCollection} from "../types/IProject.ts";
+import type IProject from "../types/IProject.ts";
 import {getEntry, render} from "astro:content";
-import portfolio from "@/projects/content/projects/portfolio.ts";
+import portfolio from "./projects/portfolio.ts";
 
 const projects: IProject[] = [portfolio]
 

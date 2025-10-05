@@ -1,10 +1,10 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import SpringIcon from "@/icons/backend/SpringIcon.astro"
-import DotNetIcon from "@/icons/backend/DotNetIcon.astro"
-import NestIcon from "@/icons/backend/NestIcon.astro"
-import RocketIcon from "@/icons/backend/RocketIcon.astro"
-import ActixIcon from "@/icons/backend/ActixWebIcon.astro"
-import GoIcon from "@/icons/language/GoIcon.astro"
+import type {IDetailedSkill} from "../../types/ISkill.ts";
+import SpringIcon from "../../assets/icons/backend/SpringIcon.astro"
+import DotNetIcon from "../../assets/icons/backend/DotNetIcon.astro"
+import NestIcon from "../../assets/icons/backend/NestIcon.astro"
+import RocketIcon from "../../assets/icons/backend/RocketIcon.astro"
+import ActixIcon from "../../assets/icons/backend/ActixWebIcon.astro"
+import GoIcon from "../../assets/icons/language/GoIcon.astro"
 
 export const spring: IDetailedSkill = {
   icon: SpringIcon,

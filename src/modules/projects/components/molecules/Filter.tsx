@@ -1,5 +1,5 @@
-import type {TFilter} from "@/projects/types/TFilter.ts";
-import FilterSelect from "@/projects/components/atoms/FilterSelect.tsx";
+import type {TFilter} from "../../types/TFilter.ts";
+import FilterSelect from "../atoms/FilterSelect.tsx";
 
 interface Props{
   title: string

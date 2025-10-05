@@ -1,24 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": ["./*"],
-      "@/icons/*": [
-        "core/assets/icons/*"
-      ],
-      "@/core/*": [
-        "core/*"
-      ],
-      "@/home/*": [
-        "modules/home/*"
-      ],
-      "@/skills/*": [
-        "modules/skills/*"
-      ],
-      "@/projects/*": [
-        "modules/projects/*"
-      ]
-    },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },

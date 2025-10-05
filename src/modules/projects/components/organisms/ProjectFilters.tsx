@@ -1,8 +1,8 @@
-import type {ICategoryFilter} from "@/projects/types/IProject.ts";
-import Filter from "@/projects/components/molecules/Filter.tsx";
+import type {ICategoryFilter} from "../../types/IProject.ts";
+import Filter from "../molecules/Filter.tsx";
 import {useMemo} from "react";
-import type {IFilterSchema, TFilter} from "@/projects/types/TFilter.ts";
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
+import type {IFilterSchema, TFilter} from "../../types/TFilter.ts";
+import type {IDetailedSkill} from "../../../../core/types/ISkill.ts";
 
 interface Props{
   title: string;

@@ -1,11 +1,11 @@
 ---
-import AppLayout from "@/core/layouts/AppLayout.astro";
-import DynamicProjectView from "@/projects/views/DynamicProjectView.tsx";
-import type {Locale} from "@/core/types/Locales.ts";
-import getProjects from "@/projects/content/getProjects.ts";
-import type {IFilterSchema} from "@/projects/types/TFilter.ts";
+import AppLayout from "../../core/layouts/AppLayout.astro";
+import DynamicProjectView from "../../modules/projects/views/DynamicProjectView.tsx";
+import type {Locale} from "../../core/types/Locales.ts";
+import getProjects from "../../modules/projects/content/getProjects.ts";
+import type {IFilterSchema} from "../../modules/projects/types/TFilter.ts";
 import {getEntry} from "astro:content";
-import type {IProjectSchema} from "@/projects/types/IProject.ts";
+import type {IProjectSchema} from "../../modules/projects/types/IProject.ts";
 const locale = Astro.currentLocale!;
 const projects = await getProjects(locale);
 const filterT: IFilterSchema = (await getEntry("filter", locale))!.data;

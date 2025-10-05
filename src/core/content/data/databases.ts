@@ -1,10 +1,10 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import SQLiteIcon from "@/core/assets/icons/databases/SQLiteIcon.astro"
-import MariaIcon from "@/core/assets/icons/databases/MariaIcon.astro"
-import PostgresIcon from "@/core/assets/icons/databases/PostgreIcon.astro"
-import MySQLIcon from "@/core/assets/icons/databases/MySQLIcon.astro"
-import MongoIcon from "@/core/assets/icons/databases/MongoIcon.astro"
-import RedisIcon from "@/core/assets/icons/databases/RedisIcon.astro"
+import type {IDetailedSkill} from "../../types/ISkill.ts";
+import SQLiteIcon from "../../assets/icons/databases/SQLiteIcon.astro"
+import MariaIcon from "../../assets/icons/databases/MariaIcon.astro"
+import PostgresIcon from "../../assets/icons/databases/PostgreIcon.astro"
+import MySQLIcon from "../../assets/icons/databases/MySQLIcon.astro"
+import MongoIcon from "../../assets/icons/databases/MongoIcon.astro"
+import RedisIcon from "../../assets/icons/databases/RedisIcon.astro"
 
 export const sqlite: IDetailedSkill = {
   key: "sqlite",

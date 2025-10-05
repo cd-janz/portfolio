@@ -1,4 +1,4 @@
-import type {Locale} from "@/core/types/Locales.ts";
+import type {Locale} from "../types/Locales.ts";
 
 const months: Record<Locale, string[]> = {
   es: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],

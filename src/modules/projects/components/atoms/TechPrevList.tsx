@@ -1,4 +1,4 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
+import type {IDetailedSkill} from "../../../../core/types/ISkill.ts";
 
 interface Props{
   label: string,

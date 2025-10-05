@@ -1,6 +1,6 @@
-import type {IMusicGenre} from "@/core/types/INerdThings.ts";
-import type INerdThings from "@/core/types/INerdThings.ts";
-import type {Locale} from "@/core/types/Locales.ts";
+import type {IMusicGenre} from "../../types/INerdThings.ts";
+import type INerdThings from "../../types/INerdThings.ts";
+import type {Locale} from "../../types/Locales.ts";
 
 const hobbies: Record<Locale, string[]> = {
   en: ["video games", "music", "basketball", "exercise"],

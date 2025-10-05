@@ -14,9 +14,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-
   integrations: [sitemap(), react(), mdx()],
-
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
@@ -25,7 +23,6 @@ export default defineConfig({
       redirectToDefaultLocale: true
     }
   },
-
   output: "server",
   adapter: vercel()
 });

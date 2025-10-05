@@ -1,10 +1,10 @@
 ---
-import "@/core/styles/contact.css"
+import "../../styles/contact.css"
 import {getEntry} from "astro:content";
-import ContactInput from "@/core/components/molecules/ContactInput.astro";
-import ContactTextArea from "@/core/components/molecules/ContactTextArea.astro";
-import ContactSubmit from "@/core/components/atom/ContactSubmit.astro";
-import ContactInfo from "@/core/components/organisms/ContactInfo.astro";
+import ContactInput from "../molecules/ContactInput.astro";
+import ContactTextArea from "../molecules/ContactTextArea.astro";
+import ContactSubmit from "../atom/ContactSubmit.astro";
+import ContactInfo from "./ContactInfo.astro";
 const t = (await getEntry("contact", Astro.currentLocale!))!.data;
 ---
 <div class="contact_container">

@@ -1,5 +1,5 @@
-import type {TFilter} from "@/projects/types/TFilter.ts";
-import {getNYearsBefore} from "@/core/utils/dateUtils.ts";
+import type {TFilter} from "../types/TFilter.ts";
+import {getNYearsBefore} from "../../../core/utils/dateUtils.ts";
 
 export default function getDateFilter(nYears: number){
   const years = getNYearsBefore(new Date().getFullYear(), nYears);

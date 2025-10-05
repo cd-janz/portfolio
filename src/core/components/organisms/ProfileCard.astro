@@ -1,9 +1,9 @@
 ---
-import "@/core/styles/profileCard.css"
-import getPersonData from "@/core/content/data/person.ts";
-import type {Locale} from "@/core/types/Locales.ts";
+import "../../styles/profileCard.css"
+import getPersonData from "../../content/data/person.ts";
+import type {Locale} from "../../types/Locales.ts";
 import { Image } from 'astro:assets';
-import StarIcon from "@/core/assets/icons/system/StarIcon.astro";
+import StarIcon from "../../assets/icons/system/StarIcon.astro";
 const locale = Astro.currentLocale! as Locale;
 const data = await getPersonData(locale);
 ---

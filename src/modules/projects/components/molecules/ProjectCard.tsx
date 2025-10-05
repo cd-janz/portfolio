@@ -1,9 +1,9 @@
-import type IProject from "@/projects/types/IProject.ts";
-import type {IProjectSchema} from "@/projects/types/IProject.ts";
-import getStringDate from "@/core/utils/dateUtils.ts";
-import type {Locale} from "@/core/types/Locales.ts";
-import TechPrevList from "@/projects/components/atoms/TechPrevList.tsx";
-import SeeIcon from "@/icons/system/SeeIcon.tsx";
+import type IProject from "../../types/IProject.ts";
+import type {IProjectSchema} from "../../types/IProject.ts";
+import getStringDate from "../../../../core/utils/dateUtils.ts";
+import type {Locale} from "../../../../core/types/Locales.ts";
+import TechPrevList from "../atoms/TechPrevList.tsx";
+import SeeIcon from "../../../../core/assets/icons/system/SeeIcon.tsx";
 
 interface Props{
   project: IProject

@@ -1,11 +1,11 @@
-import type {IDetailedSkill} from "@/core/types/ISkill.ts";
-import AWSIcon from "@/icons/cloud/AWSIcon.astro"
-import AzureIcon from "@/icons/cloud/AzureIcon.astro"
-import DockerIcon from "@/icons/cloud/DockerIcon.astro"
-import KubernetesIcon from "@/icons/cloud/KubernetesIcon.astro"
-import LinuxIcon from "@/icons/cloud/LinuxIcon.astro"
-import NginxIcon from "@/icons/cloud/nginxIcon.astro"
-import TerraformIcon from "@/icons/cloud/TerraformIcon.astro"
+import type {IDetailedSkill} from "../../types/ISkill.ts";
+import AWSIcon from "../../assets/icons/cloud/AWSIcon.astro"
+import AzureIcon from "../../assets/icons/cloud/AzureIcon.astro"
+import DockerIcon from "../../assets/icons/cloud/DockerIcon.astro"
+import KubernetesIcon from "../../assets/icons/cloud/KubernetesIcon.astro"
+import LinuxIcon from "../../assets/icons/cloud/LinuxIcon.astro"
+import NginxIcon from "../../assets/icons/cloud/nginxIcon.astro"
+import TerraformIcon from "../../assets/icons/cloud/TerraformIcon.astro"
 
 export const linux: IDetailedSkill = {
   icon: LinuxIcon,

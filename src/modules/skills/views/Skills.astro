@@ -1,10 +1,10 @@
 ---
 import "../styles/skills.css"
-import getSkills from "@/core/content/data/skills.ts";
-import type {Locale} from "@/core/types/Locales.ts";
-import SectionLayout from "@/core/layouts/SectionLayout.astro";
+import getSkills from "../../../core/content/data/skills.ts";
+import type {Locale} from "../../../core/types/Locales.ts";
+import SectionLayout from "../../../core/layouts/SectionLayout.astro";
 import {getEntry} from "astro:content";
-import IdeaIcon from "@/icons/system/IdeaIcon.astro";
+import IdeaIcon from "../../../core/assets/icons/system/IdeaIcon.astro";
 import SkillCategory from "../components/SkillCategory.astro";
 const locale = Astro.currentLocale!;
 const entry = (await getEntry("skills", locale));

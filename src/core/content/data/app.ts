@@ -1,5 +1,5 @@
-import type IApp from "@/core/types/IApp.ts";
-import type {Locale} from "@/core/types/Locales.ts";
+import type IApp from "../../types/IApp.ts";
+import type {Locale} from "../../types/Locales.ts";
 
 
 const labels: Record<Locale, string[]> = {
