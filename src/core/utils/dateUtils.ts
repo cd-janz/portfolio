@@ -14,3 +14,6 @@ export default function getStringDate(locale: Locale, date: Date){
   const year = date.getFullYear().toString();
   return [options[locale], `${month}, ${year}`];
 }
+export function getNYearsBefore(year: number, n: number){
+  return Array.from({length: n+1}).map((_, i) =>{return year-i})
+}

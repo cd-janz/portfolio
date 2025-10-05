@@ -87,18 +87,28 @@ const contact = defineCollection({
   })
 })
 
-const projects = defineCollection({
-  loader: glob({pattern: "*.json", base: "./src/content/projects/"}),
+const filter = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/projects/filter/"}),
   schema: z.object({
     filterTitle: z.string(),
     category: z.string(),
     language: z.string(),
     technology: z.string(),
+    date: z.string(),
+  })
+})
+
+const card = defineCollection({
+  loader: glob({pattern: "*.json", base: "./src/content/projects/card/"}),
+  schema: z.object({
+    languages: z.string(),
+    technologies: z.string(),
+    seeMore: z.string(),
   })
 })
 
 const projectItem = defineCollection({
-  loader: glob({pattern: "*.json", base: "./src/content/projects/items/"}),
+  loader: glob({pattern: "*.mdx", base: "./src/content/projects/items/"}),
   schema: z.object({
     name: z.string(),
     description: z.string(),
@@ -107,4 +117,4 @@ const projectItem = defineCollection({
   })
 })
 
-export const collections = { about, timeline, timelineItem, skills, contact, projectItem, projects }
+export const collections = { about, timeline, timelineItem, skills, contact, projectItem, filter, card }

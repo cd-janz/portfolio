@@ -3,9 +3,14 @@ import AppLayout from "@/core/layouts/AppLayout.astro";
 import DynamicProjectView from "@/projects/views/DynamicProjectView.tsx";
 import type {Locale} from "@/core/types/Locales.ts";
 import getProjects from "@/projects/content/getProjects.ts";
+import type {IFilterSchema} from "@/projects/types/TFilter.ts";
+import {getEntry} from "astro:content";
+import type {IProjectSchema} from "@/projects/types/IProject.ts";
 const locale = Astro.currentLocale!;
 const projects = await getProjects(locale);
+const filterT: IFilterSchema = (await getEntry("filter", locale))!.data;
+const cardT: IProjectSchema = (await getEntry("card", locale))!.data;
 ---
 <AppLayout title="Projects" className="pt-5 px-5">
-  <DynamicProjectView client:only locale={locale as Locale} projects={projects} />
+  <DynamicProjectView client:only locale={locale as Locale} projects={projects} filterT={filterT} cardT={cardT} />
 </AppLayout>

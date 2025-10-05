@@ -1,6 +1,12 @@
 import type {IDetailedSkill} from "@/core/types/ISkill.ts";
 import type {Locale} from "@/core/types/Locales.ts";
 
+export interface IProjectSchema{
+  languages: string;
+  technologies: string;
+  seeMore: string;
+}
+
 export default interface IProject {
   //will be content collection element
   //name: string description: string type: string

@@ -1,10 +1,13 @@
 import type {IProjectCollection} from "@/projects/types/IProject.ts";
 import type IProject from "@/projects/types/IProject.ts";
 import {getEntry, render} from "astro:content";
+import portfolio from "@/projects/content/projects/portfolio.ts";
+
+const projects: IProject[] = [portfolio]
 
 async function fetchCollection(locale: string, name: string){
-  const res = await getEntry("projectItem", `${locale}${name}`)
-  if(!res) throw new Error(`${name} not found`);
+  const res = await getEntry("projectItem", `${locale}_${name}`)
+  if(!res) throw new Error(`${locale}_${name} not found`)
   const data = res.data;
   return {
     name: data.name,
@@ -16,5 +19,10 @@ async function fetchCollection(locale: string, name: string){
 }
 
 export default async function getProjects(locale: string): Promise<IProject[]> {
-  return [];
+  return await Promise.all(
+    projects.map(async (project) => ({
+      ...project,
+      collection: await fetchCollection(locale, project.collectionName),
+    }))
+  );
 }

@@ -29,6 +29,7 @@
 
 .select_options{
   width: 100%;
+  z-index: 50;
   height: 0;
   position: absolute;
   left: 0;
