@@ -8,11 +8,15 @@ import react from "@astrojs/react";
 
 import mdx from "@astrojs/mdx";
 
+import vercel from "@astrojs/vercel";
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+
   integrations: [sitemap(), react(), mdx()],
+
   i18n: {
     locales: ["en", "es"],
     defaultLocale: "en",
@@ -21,5 +25,7 @@ export default defineConfig({
       redirectToDefaultLocale: true
     }
   },
-  output: "server"
+
+  output: "server",
+  adapter: vercel()
 });
