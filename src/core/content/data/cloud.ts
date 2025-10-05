@@ -4,7 +4,7 @@ import AzureIcon from "../../assets/icons/cloud/AzureIcon.astro"
 import DockerIcon from "../../assets/icons/cloud/DockerIcon.astro"
 import KubernetesIcon from "../../assets/icons/cloud/KubernetesIcon.astro"
 import LinuxIcon from "../../assets/icons/cloud/LinuxIcon.astro"
-import NginxIcon from "../../assets/icons/cloud/nginxIcon.astro"
+import NginxIcon from "../../assets/icons/cloud/NginxIcon.astro"
 import TerraformIcon from "../../assets/icons/cloud/TerraformIcon.astro"
 
 export const linux: IDetailedSkill = {
