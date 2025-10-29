@@ -1,45 +1,49 @@
-.contact_container{
+.contact_container {
   width: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 20px;
+  gap: 10px;
 }
 
-.contact_form-container{
+.contact_form-container {
   width: 100%;
   border: 1px solid var(--border);
-  padding: 20px 40px;
+  padding: 10px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.contact_input{
+.contact_input {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
-.contact_input > label{
+.contact_input > label {
+  max-width: 100%;
   font-weight: 200;
   font-size: medium;
+  text-wrap: nowrap;
+  overflow-x: hidden;
   text-transform: capitalize;
   font-style: italic;
   display: flex;
   align-items: start;
   justify-content: start;
+  font-size: 0.725rem;
 }
-.contact-input{
+.contact-input {
   padding: 8px 10px;
   border: 1px solid var(--border-disabled);
   border-radius: 8px;
   background: var(--muted);
   font-weight: 300;
+  font-size: 0.925rem;
 }
-.contact-input::placeholder{
+.contact-input::placeholder {
   color: var(--text-disabled);
   font-family: "Victor Mono", monospace, sans-serif !important;
-  font-size: small;
+  font-size: 0.725rem;
 }
-.contact-input:focus{
+.contact-input:focus {
   outline-color: var(--border-focus);
 }

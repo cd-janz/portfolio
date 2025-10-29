@@ -1,33 +1,30 @@
 ---
-import "../styles/timeline.css"
+import "../styles/timeline.css";
 import SectionLayout from "../../../core/layouts/SectionLayout.astro";
 import LibraryIcon from "../../../core/assets/icons/system/LibraryIcon.astro";
-import {getCollection, getEntry} from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import clsx from "clsx";
 import TimelineCard from "../components/TimelineCard.astro";
 import DegreeIcon from "../../../core/assets/icons/system/DegreeIcon.astro";
 import BootcampIcon from "../../../core/assets/icons/system/BootcampIcon.astro";
 import WorkIcon from "../../../core/assets/icons/system/WorkIcon.astro";
 const locale = Astro.currentLocale!;
-const data = await (async()=> {
+const data = await (async () => {
   const data = await getEntry("timeline", locale);
-  if(!data) throw new Error("no entry found");
-  return data.data
+  if (!data) throw new Error("no entry found");
+  return data.data;
 })();
-const items = (await getCollection("timelineItem",
-  entry => entry.id.startsWith(locale))
+const items = (
+  await getCollection("timelineItem", (entry) => entry.id.startsWith(locale))
 ).map((entry) => entry.data);
 ---
 <SectionLayout title={data.title} id="education" description={data.subtitle}>
   <LibraryIcon slot="icon"/>
   <div class="timeline_container">
-    <figure class="absolute top-0 left-1/2 w-[2px] rounded-md h-full bg-border"/>
+    <figure class="absolute hidden xl:flex top-0 left-1/2 w-[2px] rounded-md h-full bg-border"/>
     {items.sort((a,b) => a.achievement.length - b.achievement.length).map(item => (
       <TimelineCard path={item.documentPath} download={item.documentPath?.startsWith("/") ? "experience" : undefined}>
-        <div class="flex items-center gap-2 justify-end">
-          <h4 class="capitalize font-light">
-            {data[item.type]}
-          </h4>
+        <div class="absolute -top-3 -right-3">
           <figure class={clsx("w-9 h-9 p-1 rounded-full",
             item.type==="degree" && "text-indigo-600 bg-indigo-100",
             item.type==="course" && "text-blue-600 bg-blue-100",
@@ -40,9 +37,9 @@ const items = (await getCollection("timelineItem",
             {item.type==="work" && (<WorkIcon/>)}
           </figure>
         </div>
-        <h5 class="font-bold text-xl">{item.title}</h5>
-        <h6 class="font-semibold pl-1.5">{item.subtitle}</h6>
-        <div class="flex items-center gap-2 pl-3 font-poppins font-light">
+        <h5 class="font-bold text-base">{item.title}</h5>
+        <h6 class="font-semibold text-sm">{item.subtitle}</h6>
+        <div class="flex items-center gap-2 font-poppins font-light text-sm">
           <p class="capitalize">
             {item.startDate} - {item.endDate ? item.endDate : (
             <span class="text-amber-400">{data.paused}</span>
@@ -50,12 +47,12 @@ const items = (await getCollection("timelineItem",
           </p>
         </div>
         {item.description && (
-          <p class="px-3 py-1.5 italic font-light">"{item.description}"</p>
+          <p class="px-1 py-1.5 italic font-light text-sm">"{item.description}"</p>
         )}
         {item.achievement.length > 0 && (
           <div>
-            <h3 class="capitalize">{data.achievements}</h3>
-            <ul class="text-sm list-disc pl-5 font-medium font-poppins">
+            <h3 class="capitalize text-sm">{data.achievements}</h3>
+            <ul class="text-xs list-disc pl-5 font-medium font-poppins">
               {item.achievement.map( achievement => (
                 <li>{achievement}</li>
               ))}
@@ -64,10 +61,10 @@ const items = (await getCollection("timelineItem",
         )}
         {item.technologies.length > 0 && (
           <div class="flex flex-col gap-1">
-            <h3 class="capitalize font-semibold">{data.technologies}</h3>
-            <ul class="flex items-center gap-1.5 flex-wrap">
+            <h3 class="capitalize text-sm font-semibold">{data.technologies}</h3>
+            <ul class="flex items-center text-xs gap-1.5 flex-wrap">
               {item.technologies.map(tech => (
-                <li class="font-light text-sm px-2 py-0.5 bg-surface rounded-md">
+                <li class="font-light px-1.5 py-0.5 bg-surface rounded-md">
                   <p>{tech}</p>
                 </li>
               ))}

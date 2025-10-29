@@ -1,17 +1,17 @@
 ---
 import clsx from "clsx";
-interface Props{
-  title: string
+interface Props {
+  title: string;
   className?: string;
 }
-const {title, className} = Astro.props;
+const { title, className } = Astro.props;
 ---
 <div class={clsx("card_container", className)}>
   <div class="card_title">
     <figure class="card_title-figure"><slot name="icon" /></figure>
-    <h4 class="text-3xl capitalize">{title}</h4>
+    <h4 class="text-xl capitalize">{title}</h4>
   </div>
-  <div class="font-light text-base">
+  <div class="font-light text-sm">
     <slot/>
   </div>
 </div>
@@ -23,17 +23,17 @@ const {title, className} = Astro.props;
   }
   .card_title-figure{
     padding: 5px;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     background: var(--primary-disabled);
     color: var(--text-alternative);
     border-radius: 8px;
   }
   .card_container{
     width: 100%;
-    padding: var(--gap);
     display: flex;
+    padding: 15px 0;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
   }
 </style>

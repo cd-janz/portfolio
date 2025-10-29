@@ -1,7 +1,7 @@
 ---
-import "../styles/hero.css"
-import type {Locale} from "../../../core/types/Locales.ts";
-import Sphere from "../components/Sphere.astro"
+import "../styles/hero.css";
+import type { Locale } from "../../../core/types/Locales.ts";
+import Sphere from "../components/Sphere.astro";
 import getPersonData from "../../../core/content/data/person.ts";
 import getHeroWelcome from "../../../core/content/data/welcome.ts";
 import FixedStars from "../components/FixedStars.astro";
@@ -14,7 +14,7 @@ const data = await getPersonData(locale);
 <div class="hero_container">
   <FixedStars/>
   <Sphere>
-    <div class="text-center">
+    <div class="text-center text-nowrap">
       <h6 class="welcome font-medium">{welcome.first}</h6>
       <div class="name font-bold">
         <h3>{data.firstName.split(" ")[0]} {data.lastName}</h3>
@@ -24,13 +24,13 @@ const data = await getPersonData(locale);
     </div>
     <div class="buttons_container">
       <button class="btn primary">
-        <i class="w-5 h-5">
+        <i class="w-4 h-4">
           <DocumentIcon/>
         </i>
         <span class="hero_button-text">curriculum vitae</span>
       </button>
       <a href="#contact" class="btn muted">
-        <figure class="w-5 h-5">
+        <figure class="w-4 h-4">
           <PhoneIcon />
         </figure>
         <span class="hero_button-text">contact</span>

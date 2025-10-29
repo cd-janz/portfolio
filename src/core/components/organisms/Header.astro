@@ -1,9 +1,10 @@
 ---
 import "../../styles/header.css";
 import BugIcon from "../../assets/icons/system/BugIcon.astro";
+import HamburgerIcon from "../../assets/icons/system/HamburgerIcon.astro";
 import getAppData from "../../content/data/app.ts";
-import {getRelativeLocaleUrl} from "astro:i18n";
-import type {Locale} from "../../types/Locales.ts";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Locale } from "../../types/Locales.ts";
 import clsx from "clsx";
 const locale = Astro.currentLocale!;
 const app = await getAppData(locale as Locale);
@@ -17,8 +18,8 @@ const url = Astro.url;
     </figure>
     <h1 class="font-bold">{app.title}</h1>
   </div>
-  <nav>
-    {app.nav.map((item, index) => (
+  <nav class="desktop">
+    {app.nav.map(item => (
       <li class="w-fit h-fit">
         <a href={getRelativeLocaleUrl(locale, item.path)}
            class={clsx("nav-item",
@@ -31,5 +32,6 @@ const url = Astro.url;
       </li>
     ))}
   </nav>
+  <figure id="sb-trigger" class="w-6 h-6 mobile"><HamburgerIcon/></figure>
 </header>
 <div class="false_header"/>

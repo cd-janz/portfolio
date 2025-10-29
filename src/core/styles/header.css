@@ -1,22 +1,20 @@
 header {
-  height: var(--header);
   position: fixed;
-  top: 0;
+  height: var(--header);
   z-index: 10;
   align-self: center;
-  width: 95%;
+  width: calc(100% - 10px);
   border-radius: 0 0 12px 12px;
   border: 1px solid var(--border-focus);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 15px;
 }
-.false_header{
-  height: calc(var(--header) + var(--gap));
+.false_header {
+  height: var(--header);
 }
-
-.title{
+.title {
   color: var(--color-text);
   text-transform: capitalize;
   display: flex;
@@ -24,23 +22,29 @@ header {
   gap: 10px;
 }
 
-nav{
-  display: flex;
+nav.desktop {
+  display: none;
+  /* display: flex; */
   align-items: center;
   gap: 5px;
   list-style: none;
   text-transform: capitalize;
 }
-.nav-item{
+figure.mobile {
+  display: flex;
+}
+.nav-item {
   padding: 8px 20px;
   border-radius: 7px;
 }
-.nav-item:hover{
+.nav-item:hover {
   cursor: pointer;
   background-color: var(--primary);
   color: var(--text-alternative);
 }
-.nav-item.active{
+.nav-item.active {
   background-color: var(--primary-active);
   color: var(--text-alternative);
+}
+@media screen and (min-width: 640px) {
 }

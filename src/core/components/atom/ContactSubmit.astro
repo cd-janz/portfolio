@@ -1,11 +1,11 @@
 ---
-interface Props{
+interface Props {
   id: string;
   label: string;
 }
-const {id, label} = Astro.props;
+const { id, label } = Astro.props;
 ---
 <button id={id}
-        class="col-span-2 font-victor bg-primary hover:bg-primary-focus text-text-alternative py-2 rounded-lg capitalize cursor-pointer">
+        class="col-span-2 font-victor bg-primary hover:bg-primary-focus text-text-alternative py-2 rounded-lg text-sm capitalize cursor-pointer">
   {label}
 </button>
