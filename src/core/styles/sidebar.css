@@ -12,3 +12,20 @@
 .sidebar.open {
   transform: translateX(0);
 }
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 15px;
+}
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-transform: capitalize;
+}
+.sidebar-item {
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+}

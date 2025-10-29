@@ -1,19 +1,19 @@
 ---
-import type {ISkillCategory} from "../../../core/types/ISkill.ts";
+import type { ISkillCategory } from "../../../core/types/ISkill.ts";
 import SkillItem from "./SkillItem.astro";
-interface Props{
-  category: ISkillCategory
-  proficiency: string
-  frequency: string
+interface Props {
+  category: ISkillCategory;
+  proficiency: string;
+  frequency: string;
 }
-const {category, proficiency, frequency} = Astro.props;
+const { category, proficiency, frequency } = Astro.props;
 ---
 <div class="skills_category-container">
   <div class="flex flex-col items-center gap-1 skills_category-title justify-center">
     <h4 class="capitalize">{category.name}</h4>
   </div>
   {Array.from({length: Math.ceil(category.items.length / 6)}).map((_, i) => (
-    <ul class="gap-2 skills_items-container grid grid-cols-6">
+    <ul class="gap-2 skills_items-container grid 2xl:grid-cols-6">
       {category.items
         .sort((a,b)=> b.proficiency - a.proficiency)
         .slice(i*6, (i+1)*6)

@@ -1,5 +1,24 @@
 ---
 import "../../styles/sidebar.css";
+import getAppData from "../../content/data/app";
+import type { Locale } from "../../types/Locales";
+import HamburgerIcon from "../../assets/icons/system/HamburgerIcon.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const locale = Astro.currentLocale as Locale;
+const app = await getAppData(locale as Locale);
 ---
 <div id="sidebar" class="sidebar xl:hidden">
+  <div class="sidebar-header">
+    <h3>{app.title}</h3>
+    <figure id="sb-trigger2"class="w-6 h-6">
+      <HamburgerIcon/>
+    </figure>
+  </div>
+  <div class="sidebar-nav">
+    {app.nav.map((item)=> (
+      <a href={getRelativeLocaleUrl(locale, item.path)} class="sidebar-item">
+        {item.label}
+      </a>
+    ))}
+  </div>
 </div>
