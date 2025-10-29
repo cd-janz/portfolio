@@ -1,4 +1,4 @@
-.select_box{
+.select_box {
   height: 40px;
   border: 1px solid var(--border);
   padding: 0 10px;
@@ -6,11 +6,11 @@
   align-items: center;
   border-radius: 6px;
 }
-.select_box:hover{
+.select_box:hover {
   background: var(--muted);
   cursor: pointer;
 }
-.select_value{
+.select_value {
   font-weight: 400;
   text-transform: capitalize;
   text-align: left;
@@ -19,15 +19,15 @@
   gap: 5px;
 }
 
-.select_value-item{
+.select_value-item {
   padding: 2px 5px;
   border-radius: 6px;
   border: 1px solid var(--border);
-  font-size: small;
+  font-size: 0.725rem;
   background: var(--muted-focus);
 }
 
-.select_options{
+.select_options {
   width: 100%;
   z-index: 50;
   height: 0;
@@ -41,29 +41,30 @@
   border-color: var(--border);
   max-height: 250px;
 }
-.select_options::-webkit-scrollbar{
+.select_options::-webkit-scrollbar {
   width: 8px;
 }
-.select_options::-webkit-scrollbar-thumb{
+.select_options::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 10px;
 }
-.select_options.open{
+.select_options.open {
   height: fit-content;
   border-radius: 10px;
   border: 1px solid var(--border);
 }
-.select_options.close{
+.select_options.close {
   height: 0;
 }
-.select_options-item{
+.select_options-item {
   padding: 8px 10px;
   text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.select_options-item:hover{
+.select_options-item:hover {
   background: var(--muted);
   cursor: pointer;
 }
+
