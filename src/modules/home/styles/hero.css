@@ -48,3 +48,12 @@
     min-height: calc(100dvh - var(--header));
   }
 }
+@media (min-width: 768px) {
+  .welcome,
+  .position {
+    font-size: 1.025rem;
+  }
+  .name {
+    font-size: 1.725rem;
+  }
+}

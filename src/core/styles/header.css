@@ -46,5 +46,11 @@ figure.mobile {
   background-color: var(--primary-active);
   color: var(--text-alternative);
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 768px) {
+  nav.desktop {
+    display: flex;
+  }
+  figure.mobile {
+    display: none;
+  }
 }

@@ -27,7 +27,7 @@ const { data, Content } = await (async () => {
 ---
 <SectionLayout description={data.subtitle} id="about" title={data.title}>
   <PersonIcon slot="icon"/>
-  <div class="grid sm:grid-cols-2 gap-2">
+  <div class="grid sm:grid-cols-2 gap-2 md:gap-5">
     <AboutCard className="sm:col-span-2" title={data.resume}>
       <PersonIcon slot="icon"/>
       <Content />

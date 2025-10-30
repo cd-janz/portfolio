@@ -45,6 +45,11 @@
   --font-victor: "Victor Mono", monospace;
 }
 
+@media (max-width: 767px){ 
+  :root{
+    --header: 45px;
+  }
+}
 
 body {
   background: var(--background);

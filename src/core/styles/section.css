@@ -50,3 +50,8 @@ section {
   height: 45px;
   color: var(--primary);
 }
+@media (min-width: 768px) {
+  .section-description {
+    font-size: 0.925rem;
+  }
+}

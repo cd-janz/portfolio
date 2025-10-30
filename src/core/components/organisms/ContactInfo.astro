@@ -61,4 +61,13 @@ const data = await getPersonData(locale);
     flex-direction: column;
     gap: 10px;
   }
+  @media (min-width: 678px) and (max-width: 1024px) {
+    .info_container {
+      flex-direction: row;
+      align-items: start;
+    }
+    .sec{
+      height: fit-content;
+    }
+  }
 </style>

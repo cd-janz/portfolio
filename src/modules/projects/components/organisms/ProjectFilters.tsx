@@ -74,7 +74,7 @@ export default function ProjectFilters({
       <h5 className="capitalize font-bold text-2xl">
         {translation.filterTitle}
       </h5>
-      <ul className="grid sm:grid-cols-2 2xl:grid-cols-4 gap-2">
+      <ul className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
         <Filter
           title={translation.category}
           data={cItems}
