@@ -13,7 +13,7 @@ const { category, proficiency, frequency } = Astro.props;
     <h4 class="capitalize">{category.name}</h4>
   </div>
   {Array.from({length: Math.ceil(category.items.length / 6)}).map((_, i) => (
-    <ul class="gap-2 skills_items-container grid 2xl:grid-cols-6">
+    <ul class="gap-2 skills_items-container grid sm:grid-cols-2 2xl:grid-cols-6">
       {category.items
         .sort((a,b)=> b.proficiency - a.proficiency)
         .slice(i*6, (i+1)*6)

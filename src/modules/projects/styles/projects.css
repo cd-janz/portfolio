@@ -35,3 +35,8 @@
   font-weight: 300;
 }
 
+@media (min-width: 640px) {
+  .projects_container {
+    grid-template-columns: 1fr 1fr;
+  }
+}

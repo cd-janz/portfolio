@@ -1,6 +1,5 @@
 ---
 import SectionLayout from "../../../core/layouts/SectionLayout.astro";
-import "../styles/about.css";
 import AboutCard from "../components/AboutCard.astro";
 import PersonIcon from "../../../core/assets/icons/system/PersonIcon.astro";
 import ServiceIcon from "../../../core/assets/icons/system/ServiceIcon.astro";
@@ -28,12 +27,12 @@ const { data, Content } = await (async () => {
 ---
 <SectionLayout description={data.subtitle} id="about" title={data.title}>
   <PersonIcon slot="icon"/>
-  <div class="about_container">
-    <AboutCard className="xl:col-span-2" title={data.resume}>
+  <div class="grid sm:grid-cols-2 gap-2">
+    <AboutCard className="sm:col-span-2" title={data.resume}>
       <PersonIcon slot="icon"/>
       <Content />
     </AboutCard>
-    <AboutCard title={data.purpose} className="xl:col-span-2">
+    <AboutCard title={data.purpose} className="sm:col-span-2">
       <BuildIcon slot="icon"/>
       {data.purposeDat}
     </AboutCard>
