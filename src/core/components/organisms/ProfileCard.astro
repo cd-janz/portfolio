@@ -1,15 +1,16 @@
 ---
-import "../../styles/profileCard.css"
+import "../../styles/profileCard.css";
 import getPersonData from "../../content/data/person.ts";
-import type {Locale} from "../../types/Locales.ts";
-import { Image } from 'astro:assets';
+import type { Locale } from "../../types/Locales.ts";
+import { Image } from "astro:assets";
 import StarIcon from "../../assets/icons/system/StarIcon.astro";
+import profile from "../../assets/pictures/avatar.png";
 const locale = Astro.currentLocale! as Locale;
 const data = await getPersonData(locale);
 ---
 <div class="profile_card">
   <figure class="profile_card-decoration bg-primary-active"/>
-  <Image src="/public/pictures/avatar.png" alt="temporary cover" width={200} height={200} loading="lazy"
+  <Image src={profile} alt="temporary cover" width={200} height={200} loading="lazy"
          class="profile_card-img"/>
   <div class="flex flex-col gap-2">
     <div class="w-full flex flex-col items-center">
