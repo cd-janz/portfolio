@@ -27,12 +27,12 @@ const { data, Content } = await (async () => {
 ---
 <SectionLayout description={data.subtitle} id="about" title={data.title}>
   <PersonIcon slot="icon"/>
-  <div class="grid sm:grid-cols-2 gap-2 md:gap-5">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5">
     <AboutCard className="sm:col-span-2" title={data.resume}>
       <PersonIcon slot="icon"/>
       <Content />
     </AboutCard>
-    <AboutCard title={data.purpose} className="sm:col-span-2">
+    <AboutCard title={data.purpose} className="sm:col-span-2 lg:col-span-1">
       <BuildIcon slot="icon"/>
       {data.purposeDat}
     </AboutCard>
@@ -60,7 +60,7 @@ const { data, Content } = await (async () => {
         </ul>
       </div>
     </AboutCard>
-    <AboutCard title={data.skills} className="xl:col-span-2">
+    <AboutCard title={data.skills}>
       <CodeIcon slot="icon"/>
       <ul class="grid grid-cols-2 gap-2">
         {core.map(skill => (

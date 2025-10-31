@@ -1,25 +1,25 @@
 ---
-import type {IDetailedSkill} from "../../../core/types/ISkill.ts";
+import type { IDetailedSkill } from "../../../core/types/ISkill.ts";
 import getStringDate from "../../../core/utils/dateUtils.ts";
-import SkillLevel from "./SkillLevel.astro"
-import type {Locale} from "../../../core/types/Locales.ts";
-interface Props{
-  item: IDetailedSkill
-  proficiency: string
-  frequency: string
+import SkillLevel from "./SkillLevel.astro";
+import type { Locale } from "../../../core/types/Locales.ts";
+interface Props {
+  item: IDetailedSkill;
+  proficiency: string;
+  frequency: string;
 }
-const {item, proficiency, frequency} = Astro.props;
+const { item, proficiency, frequency } = Astro.props;
 const Icon = item.icon;
 const date = getStringDate(Astro.currentLocale as Locale, item.learningFrom);
 ---
 <li class="skills-item">
   <div class="flex items-center gap-2">
-    <figure class="w-9 h-9 p-0.5 rounded-md">
+    <figure class="w-7 h-7 lg:w-8 lg:h-8 p-0.5 rounded-md">
       <Icon/>
     </figure>
-    <h4 class="text-lg capitalize">{item.label}</h4>
+    <h4 class="text-sm lg:text-base capitalize">{item.label}</h4>
   </div>
-  <p class="text-sm pl-2 capitalize italic font-light">
+  <p class="text-xs md:text-sm xl:text-base pl-2 capitalize italic font-light">
     {date[0]}:
     <span class="font-semibold text-primary-active">{date[1]}</span>
   </p>

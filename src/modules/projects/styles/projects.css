@@ -40,3 +40,23 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (min-width: 1024px) {
+  .projects_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .projects_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 1536px) {
+  .projects_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1900px) {
+  .projects_container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

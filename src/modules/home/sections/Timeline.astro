@@ -21,7 +21,6 @@ const items = (
 <SectionLayout title={data.title} id="education" description={data.subtitle}>
   <LibraryIcon slot="icon"/>
   <div class="timeline_container">
-    <figure class="absolute hidden xl:flex top-0 left-1/2 w-[2px] rounded-md h-full bg-border"/>
     {items.sort((a,b) => a.achievement.length - b.achievement.length).map(item => (
       <TimelineCard path={item.documentPath} download={item.documentPath?.startsWith("/") ? "experience" : undefined}>
         <div class="absolute -top-3 -right-3">

@@ -29,3 +29,8 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (min-width: 1280px) {
+  .timeline_container {
+    gap: 20px;
+  }
+}

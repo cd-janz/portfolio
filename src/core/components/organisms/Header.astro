@@ -20,7 +20,7 @@ const url = Astro.url;
   </div>
   <nav class="desktop">
     {app.nav.map(item => (
-      <li class="w-fit h-fit">
+      <li class="w-fit h-fit text-xs xl:text-sm 2xl:text-base">
         <a href={getRelativeLocaleUrl(locale, item.path)}
            class={clsx("nav-item",
              getRelativeLocaleUrl(locale, item.path).startsWith(url.pathname) &&

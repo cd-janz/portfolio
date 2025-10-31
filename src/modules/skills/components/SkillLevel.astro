@@ -1,13 +1,13 @@
 ---
 import clsx from "clsx";
-interface Props{
-  label: string,
-  level: number,
+interface Props {
+  label: string;
+  level: number;
 }
-const {label, level} = Astro.props;
+const { label, level } = Astro.props;
 ---
-<div class="flex items-center gap-1 px-2 h-fit">
-  <p class="text-sm font-light italic capitalize">{label}</p>
+<div class="flex items-center gap-1 px-2 h-fit font-light">
+  <p class="text-xs md:text-sm italic capitalize">{label}</p>
   <div class="grid grid-cols-10 gap-[1px] w-full items-center rounded-xl overflow-hidden bg-muted">
     {Array.from({length: level}).map((_, index) => (
       <figure class={clsx("h-3",

@@ -47,3 +47,14 @@
 .contact-input:focus {
   outline-color: var(--border-focus);
 }
+@media (min-width: 1024px) {
+  .contact_container {
+    grid-template-columns: 3fr 2fr;
+  }
+  .contact_input > label {
+    font-size: 0.925rem;
+  }
+  .contact_input {
+    font-size: 1.025rem;
+  }
+}
