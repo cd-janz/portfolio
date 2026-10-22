@@ -1,0 +1,41 @@
+{
+  "firstName": "Juan Camilo",
+  "lastName": "Zúñiga",
+  "role": "Full-stack Engineer",
+  "headline": "I build the systems your business runs on.",
+  "tagline": "Systems engineer focused on clean architecture, performant interfaces and software that stays maintainable as the company grows.",
+  "aboutTitle": "The human in the loop",
+  "about": [
+    "I started in technology at 18 as a deliberate, non-traditional choice, and it became the center of my life. I learn fastest where things are hardest: a tough technical bottleneck is, for me, a playground.",
+    "I have led the migration and modernization of fintech and accounting SaaS platforms, designed backends in NestJS and ASP.NET Core, and shipped fast interfaces with React, Next.js and Astro.",
+    "I care about the heart of the problem: understanding what the business needs, choosing the simplest architecture that solves it, and leaving a codebase the next person enjoys working in."
+  ],
+  "location": "Santa Marta, Colombia",
+  "languages": [
+    { "name": "Spanish", "level": "Native" },
+    { "name": "English", "level": "B1" }
+  ],
+  "workMode": "Remote / Hybrid · Open to relocation",
+  "stats": [
+    { "value": "4+", "label": "years building production software" },
+    { "value": "3", "label": "backend ecosystems: Node, .NET, Java" },
+    { "value": "5", "label": "freelance products shipped end to end" }
+  ],
+  "focus": [
+    {
+      "title": "Frontend",
+      "description": "Architecturally sound, scalable user interfaces.",
+      "skills": ["React", "Next.js", "Angular", "Astro", "SolidJS"]
+    },
+    {
+      "title": "Backend",
+      "description": "Logic-driven, performant server-side systems.",
+      "skills": ["NestJS", "ASP.NET Core", "Spring Boot", "SQL / NoSQL"]
+    },
+    {
+      "title": "Mobile & Cloud",
+      "description": "Cross-platform apps and containerized delivery.",
+      "skills": ["React Native", "Flutter", "Docker", "AWS"]
+    }
+  ]
+}

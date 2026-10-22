@@ -1,0 +1,4 @@
+.window { border: 1px solid var(--border-strong); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 94%, transparent); box-shadow: var(--shadow-glow); overflow: hidden; }
+.body { display: flex; height: clamp(600px, 78vh, 820px); }
+.main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.empty { margin: auto; padding: 2rem; font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-faint); text-align: center; }

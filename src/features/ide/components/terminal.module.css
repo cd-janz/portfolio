@@ -1,0 +1,11 @@
+.panel { flex: none; height: 170px; display: flex; flex-direction: column; border-top: 1px solid var(--border); background: color-mix(in oklab, var(--bg) 50%, var(--surface)); }
+.tabs { display: flex; gap: var(--space-6); padding: 0 1rem; border-bottom: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.tabs span { padding: 0.5rem 0; border-bottom: 2px solid transparent; }
+.tabs .current { color: var(--text); border-bottom-color: var(--accent); }
+.body { flex: 1; overflow: auto; padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.7; color: var(--text-muted); }
+.line { white-space: pre-wrap; overflow-wrap: anywhere; }
+.prompt { color: var(--success, #38e1c0); }
+.hash { color: #e8b04b; }
+.ref { color: var(--accent); }
+.cursor { display: inline-block; width: 0.55em; height: 1em; vertical-align: text-bottom; background: var(--text-muted); animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }

@@ -1,0 +1,30 @@
+---
+import { decoration } from '../../ui/decorations';
+/** Decorative, pointer-transparent backdrop: grid, animated curve and two drifting glows. */
+---
+<div class="bg" aria-hidden="true">
+  <span class="grid"></span>
+  <div class="curve" set:html={decoration('hero-decoration')} />
+  <span class="glow a"></span>
+  <span class="glow b"></span>
+</div>
+
+<style>
+  .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+  .curve { position: absolute; top: -4vh; left: 0; width: 100%; color: var(--border-strong); opacity: 0.55; }
+  .curve :global(svg) { width: 100%; height: auto; }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, #000 20%, transparent 75%);
+    opacity: 0.5;
+  }
+  .glow { position: absolute; width: 52vmax; height: 52vmax; border-radius: 50%; filter: blur(110px); opacity: 0.22; }
+  .a { background: var(--accent); top: -22vmax; left: -12vmax; animation: drift-a 26s ease-in-out infinite alternate; }
+  .b { background: var(--accent-2); top: 10vmax; right: -20vmax; opacity: 0.1; animation: drift-b 32s ease-in-out infinite alternate; }
+  @keyframes drift-a { to { transform: translate(8vmax, 6vmax) scale(1.1); } }
+  @keyframes drift-b { to { transform: translate(-10vmax, 8vmax) scale(0.9); } }
+</style>

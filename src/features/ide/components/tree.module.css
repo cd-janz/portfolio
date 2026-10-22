@@ -1,0 +1,8 @@
+.list { display: grid; }
+.row { display: flex; align-items: center; gap: 6px; width: 100%; padding: 0.3rem 0.6rem 0.3rem calc(0.5rem + var(--depth) * 0.9rem); border: 0; border-radius: 6px; background: transparent; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.88rem; text-align: left; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.row:hover { background: var(--surface-2); color: var(--text); }
+.active { background: var(--accent-soft); color: var(--text); }
+.chevron { color: var(--text-faint); }
+.spacer { display: inline-block; width: 1em; flex: none; }
+.folder { color: #e8b04b; }
+.file { color: var(--accent); }

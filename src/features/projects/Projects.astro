@@ -1,0 +1,25 @@
+---
+import Section from '../../ui/Section.astro';
+import ProjectCard from './ProjectCard.astro';
+import type { ProjectItem } from '../../data/queries';
+import { ui } from '../../i18n/ui';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; projects: ProjectItem[]; }
+const { locale, projects } = Astro.props;
+const t = ui(locale);
+---
+<Section id="projects" eyebrow={t.sections.projects} title={t.titles.projects}>
+  <div class="grid">
+    {projects.map((project) => <ProjectCard {locale} {project} />)}
+  </div>
+</Section>
+
+<script>
+  import { initDialogs } from './dialogs.client';
+  initDialogs();
+</script>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--space-6); }
+</style>

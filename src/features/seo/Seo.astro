@@ -1,0 +1,29 @@
+---
+import { SITE } from '../../config/site';
+import { alternates, localePath } from '../../i18n/paths';
+import type { Locale } from '../../i18n/locales';
+import { personJsonLd } from './jsonld';
+
+interface Props { title: string; description: string; locale: Locale; jobTitle: string; path?: string; }
+const { title, description, locale, jobTitle, path = '' } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = new URL('/og.svg', SITE.url).href;
+const links = alternates(path);
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{links.map(({ locale: l, href }) => <link rel="alternate" hreflang={l} href={new URL(href, SITE.url).href} />)}
+<link rel="alternate" hreflang="x-default" href={new URL(localePath('en', path), SITE.url).href} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content={locale === 'es' ? 'es_CO' : 'en_US'} />
+<meta property="og:image" content={ogImage} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#07090c" />
+
+<script type="application/ld+json" set:html={JSON.stringify(personJsonLd(jobTitle, description))} />

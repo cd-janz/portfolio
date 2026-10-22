@@ -1,0 +1,30 @@
+---
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'ghost';
+  type?: 'button' | 'submit';
+  external?: boolean;
+  class?: string;
+}
+const { href, variant = 'primary', type = 'button', external = false, class: className } = Astro.props;
+const Tag = href ? 'a' : 'button';
+const attrs = href
+  ? { href, ...(external && { target: '_blank', rel: 'noopener noreferrer' }) }
+  : { type };
+---
+<Tag class:list={['btn', variant, className]} {...attrs}><slot /></Tag>
+
+<style>
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2);
+    padding: 0.7rem 1.4rem; border-radius: var(--radius-pill); border: 1px solid transparent;
+    font-weight: 500; font-size: 0.95rem; cursor: pointer; white-space: nowrap;
+    transition: transform 0.2s var(--ease), background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .primary { background: var(--accent); color: #06090f; box-shadow: 0 8px 30px -10px var(--accent); }
+  .primary:hover { background: var(--accent-hover); }
+  .ghost { background: transparent; border-color: var(--border-strong); color: var(--text); }
+  .ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+</style>

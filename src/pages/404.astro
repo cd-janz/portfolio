@@ -1,0 +1,22 @@
+---
+import DocumentLayout from '../layouts/DocumentLayout.astro';
+import Button from '../ui/Button.astro';
+import { ui } from '../i18n/ui';
+
+const t = ui('en');
+---
+<DocumentLayout locale="en" title={t.notFound.title} description={t.notFound.text} jobTitle="Full-stack Engineer" noindex>
+  <section class="nf">
+    <p class="code">404</p>
+    <h1>{t.notFound.title}</h1>
+    <p>{t.notFound.text}</p>
+    <Button href="/">{t.notFound.home}</Button>
+  </section>
+</DocumentLayout>
+
+<style>
+  .nf { min-height: 100svh; display: grid; place-content: center; justify-items: center; gap: var(--space-4); text-align: center; padding: var(--gutter); }
+  .code { font-family: var(--font-mono); color: var(--accent); font-size: 1rem; }
+  h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+  p { color: var(--text-muted); }
+</style>

@@ -1,0 +1,17 @@
+---
+import DocumentLayout from '../layouts/DocumentLayout.astro';
+import Resume from '../features/resume/Resume.astro';
+import { SITE } from '../config/site';
+import { getEducation, getExperience, getProfile, getProjects } from '../data/queries';
+import { ui } from '../i18n/ui';
+import type { Locale } from '../i18n/locales';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const [profile, experience, education, projects] = await Promise.all([
+  getProfile(locale), getExperience(locale), getEducation(locale), getProjects(locale),
+]);
+---
+<DocumentLayout {locale} path="resume" title={`${SITE.name} — ${ui(locale).resumePage.title}`} description={profile.tagline} jobTitle={profile.role}>
+  <Resume {locale} {profile} {experience} {education} {projects} />
+</DocumentLayout>

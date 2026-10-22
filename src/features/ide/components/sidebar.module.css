@@ -1,0 +1,7 @@
+.sidebar { width: 260px; flex: none; padding: 0.6rem 0.5rem; overflow-y: auto; border-right: 1px solid var(--border); background: color-mix(in oklab, var(--bg) 40%, var(--surface)); }
+.heading { padding: 0.3rem 0.5rem 0.6rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); }
+.root { padding: 0.2rem 0.5rem 0.4rem; font-family: var(--font-mono); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+.projects { display: grid; gap: 2px; }
+.projects button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 0.4rem 0.6rem; border: 0; border-radius: 6px; background: transparent; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.88rem; text-align: left; cursor: pointer; }
+.projects button:hover { background: var(--surface-2); color: var(--text); }
+.projects .active { background: var(--accent-soft); color: var(--text); }

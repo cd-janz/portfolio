@@ -1,0 +1,49 @@
+/* Design tokens. The only file that defines raw colors, sizes and fonts. */
+:root {
+  color-scheme: dark;
+
+  --bg: #07090c;
+  --surface: #0d1117;
+  --surface-2: #131922;
+  --border: #1d2530;
+  --border-strong: #2a3544;
+
+  --text: #e9eef5;
+  --text-muted: #8e9aab;
+  --text-faint: #5b6678;
+
+  --accent: #45c0f0;
+  --accent-strong: #2a9fd0;
+  --accent-hover: #7dd3f7;
+  --accent-2: #7b8cff;
+  --accent-soft: color-mix(in oklab, var(--accent) 16%, transparent);
+  --success: #38e1c0;
+  --danger: #ff6b7a;
+
+  --font-display: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-body: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  --container: 1120px;
+  --container-wide: 1380px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --header-h: 72px;
+
+  --shadow-glow: 0 0 0 1px var(--border), 0 24px 60px -24px rgb(0 0 0 / 0.7);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

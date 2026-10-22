@@ -1,0 +1,43 @@
+---
+import Section from '../../ui/Section.astro';
+import Icon from '../../ui/Icon.astro';
+import { formatMonthYear } from '../../domain/dates';
+import type { Education } from '../../schemas/education';
+import { ui } from '../../i18n/ui';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; items: (Education & { id: string })[]; }
+const { locale, items } = Astro.props;
+const t = ui(locale);
+---
+<Section id="education" eyebrow={t.sections.education} title={t.titles.education}>
+  <ul class="grid">
+    {items.map((e) => (
+      <li class="card">
+        <span class="badge"><Icon name="award" size="1.4em" /></span>
+        <div class="body">
+          <p class="status">{e.status}</p>
+          <h3>{e.program}</h3>
+          <p class="school">{e.institution}</p>
+          <p class="meta"><Icon name="calendar" size="1em" />{formatMonthYear(e.start, locale)}<Icon name="location" size="1em" />{e.location}</p>
+          <p class="summary">{e.summary}</p>
+        </div>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: var(--space-6); }
+  .card { display: flex; gap: var(--space-6); padding: var(--space-8); border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 88%, transparent); transition: border-color 0.25s, transform 0.3s var(--ease); }
+  .card:hover { border-color: color-mix(in oklab, var(--accent) 45%, var(--border)); transform: translateY(-3px); }
+  .badge { display: grid; place-items: center; flex: none; width: 52px; height: 52px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent); }
+  .body { display: grid; gap: var(--space-2); }
+  .status { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-2); }
+  h3 { font-size: 1.35rem; }
+  .school { color: var(--text); }
+  .meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 8px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
+  .meta :global(.icon:not(:first-child)) { margin-left: 10px; }
+  .summary { margin-top: var(--space-2); color: var(--text-muted); font-size: 0.96rem; }
+  @media (max-width: 520px) { .card { flex-direction: column; padding: var(--space-6); } }
+</style>

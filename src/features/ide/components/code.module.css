@@ -1,0 +1,16 @@
+.view { flex: 1; min-height: 0; overflow: auto; padding: 0.9rem 0; font-family: var(--font-mono); font-size: 0.92rem; line-height: 1.8; counter-reset: ln; }
+.line { counter-increment: ln; position: relative; display: block; padding: 0 1rem 0 calc(3.2rem + var(--indent) * 1.5ch); white-space: pre-wrap; overflow-wrap: anywhere; }
+.line::before { content: counter(ln); position: absolute; left: 0; width: 2.2rem; text-align: right; color: var(--text-faint); user-select: none; }
+.line:hover { background: color-mix(in oklab, var(--accent) 6%, transparent); }
+
+.key { color: #7cc4ff; }
+.string { color: #a5e3a0; }
+.number { color: #f5a97f; }
+.literal { color: #c6a0f6; }
+.punct { color: var(--text-faint); }
+.heading { color: var(--accent); font-weight: 600; }
+.bold { color: var(--text); font-weight: 600; }
+.code { color: #f5c542; }
+.text { color: var(--text-muted); }
+.muted { color: var(--text-faint); font-style: italic; }
+

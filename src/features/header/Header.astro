@@ -1,0 +1,89 @@
+---
+import { SITE } from '../../config/site';
+import { localePath } from '../../i18n/paths';
+import { ui } from '../../i18n/ui';
+import Icon from '../../ui/Icon.astro';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const t = ui(locale);
+const other: Locale = locale === 'en' ? 'es' : 'en';
+const links = [
+  { id: 'home', label: t.nav.home },
+  { id: 'experience', label: t.nav.experience },
+  { id: 'education', label: t.nav.education },
+  { id: 'projects', label: t.nav.projects },
+  { id: 'contact', label: t.nav.contact },
+];
+---
+<header class="header" data-header>
+  <nav class="bar" aria-label="Primary">
+    <a class="brand" href={localePath(locale)} aria-label={SITE.name}>
+      <Icon name="logo" size="26px" />
+    </a>
+
+    <ul class="links" id="primary-links" data-links>
+      {links.map((l) => (
+        <li><a href={`#${l.id}`} data-link={l.id}>{l.label}</a></li>
+      ))}
+    </ul>
+
+    <div class="actions">
+      <a class="lang" href={localePath(other)} hreflang={other} lang={other} aria-label={t.switchLanguage} title={t.switchLanguage}><Icon name="locale" size="1.35em" /></a>
+      <a class="resume" href={localePath(locale, 'resume')}>{t.resume}</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="primary-links" data-burger>
+        <span class="sr-only">Menu</span><i></i><i></i>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  import { initHeader } from './header.client';
+  initHeader();
+</script>
+
+<style>
+  .header { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; justify-content: center; padding: var(--space-4) var(--gutter); transition: padding 0.3s var(--ease); }
+  .bar {
+    width: min(100%, var(--container)); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    padding: 0.55rem 0.75rem 0.55rem 1rem; border-radius: var(--radius-pill); border: 1px solid transparent;
+    transition: background 0.3s, border-color 0.3s, backdrop-filter 0.3s, width 0.4s var(--ease);
+  }
+  .header[data-scrolled='true'] .bar {
+    width: min(100%, 760px); background: color-mix(in oklab, var(--bg) 70%, transparent);
+    border-color: var(--border); backdrop-filter: blur(16px) saturate(1.4);
+  }
+  .brand { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; color: var(--text); transition: background 0.2s; }
+  .brand:hover { background: var(--accent-soft); }
+  .links { display: flex; gap: var(--space-1); }
+  .links a { position: relative; padding: 0.4rem 0.8rem; border-radius: var(--radius-pill); color: var(--text-muted); font-size: 0.92rem; transition: color 0.2s; }
+  .links a:hover, .links a[aria-current='true'] { color: var(--text); }
+  .links a[aria-current='true']::after { content: ''; position: absolute; left: 22%; right: 22%; bottom: 0; height: 2px; border-radius: 2px; background: var(--accent); }
+  .actions { display: flex; align-items: center; gap: var(--space-2); }
+  .lang { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: var(--text-muted); transition: color 0.2s, background 0.2s; }
+  .lang:hover { background: var(--accent-soft); }
+  .lang:hover { color: var(--text); }
+  .resume { font-size: 0.88rem; padding: 0.45rem 1rem; border-radius: var(--radius-pill); border: 1px solid var(--border-strong); transition: border-color 0.2s, background 0.2s; }
+  .resume:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .burger { display: none; position: relative; width: 38px; height: 38px; border: 1px solid var(--border-strong); border-radius: 50%; background: transparent; cursor: pointer; }
+  .burger i { position: absolute; left: 11px; right: 11px; height: 2px; background: var(--text); transition: transform 0.25s var(--ease); }
+  .burger i:first-of-type { top: 15px; } .burger i:last-of-type { top: 21px; }
+  .burger[aria-expanded='true'] i:first-of-type { transform: translateY(3px) rotate(45deg); }
+  .burger[aria-expanded='true'] i:last-of-type { transform: translateY(-3px) rotate(-45deg); }
+
+  @media (max-width: 760px) {
+    .burger { display: block; }
+    .resume { display: none; }
+    .links {
+      position: absolute; top: calc(100% + 4px); left: var(--gutter); right: var(--gutter); flex-direction: column;
+      padding: var(--space-3); border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border);
+      opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity 0.2s, transform 0.25s var(--ease), visibility 0.2s;
+    }
+    .links.open { opacity: 1; visibility: visible; transform: none; }
+    .links a { display: block; padding: 0.75rem 1rem; }
+    .links a[aria-current='true']::after { display: none; }
+    .links a[aria-current='true'] { background: var(--accent-soft); }
+  }
+</style>

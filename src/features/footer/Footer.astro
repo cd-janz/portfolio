@@ -1,0 +1,35 @@
+---
+import { SITE } from '../../config/site';
+import { ui } from '../../i18n/ui';
+import Icon from '../../ui/Icon.astro';
+import { decoration } from '../../ui/decorations';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; }
+const { locale } = Astro.props;
+const t = ui(locale);
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="deco" aria-hidden="true" set:html={decoration('footer-decoration')} />
+  <div class="container row">
+    <a class="wordmark" href="#home" aria-label={SITE.name}><Icon name="name" size="84px" /></a>
+    <p>© {year} {SITE.name}. {t.footer.designedBy} <strong>{SITE.designer}</strong> · {t.footer.builtBy} <a href={SITE.social.github} rel="noopener noreferrer">{SITE.handle}</a>.</p>
+    <ul class="social">
+      <li><a href={SITE.social.github} rel="noopener noreferrer" target="_blank">GitHub</a></li>
+      <li><a href={SITE.social.linkedin} rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+      <li><a href={`mailto:${SITE.email}`}>Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .footer { position: relative; overflow: hidden; border-top: 1px solid var(--border); padding-block: var(--space-8); color: var(--text-muted); font-size: 0.9rem; }
+  .deco { position: absolute; inset: 0; color: var(--border-strong); pointer-events: none; opacity: 0.6; }
+  .deco :global(svg) { width: 100%; height: 100%; }
+  .wordmark { color: var(--text); display: inline-flex; }
+  .row { position: relative; align-items: center; display: flex; justify-content: space-between; gap: var(--space-4); flex-wrap: wrap; }
+  .social { display: flex; gap: var(--space-6); }
+  a:hover { color: var(--text); }
+  strong { color: var(--text); font-weight: 600; }
+</style>

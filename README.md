@@ -1,46 +1,44 @@
-# Astro Starter Kit: Basics
+# Juan Camilo Zúñiga — Portfolio
 
-```sh
-bun create astro@latest -- --template basics
+Astro 7 + SolidJS islands, plain CSS tokens, bilingual (en/es), deployed on Vercel.
+
+## Architecture (one responsibility per module)
+
+```
+src/
+  config/      site constants only
+  i18n/        locales, path helpers, UI copy (typed dictionaries)
+  domain/      pure TS: dates, timeline sorting (no framework)
+  schemas/     one zod schema per content type
+  content/     data: <collection>/<locale>/<entry> (json / md)
+  data/        read-only queries over collections
+  server/      contact use case: schema, escape, template, mailer port + Resend adapter, rate limiter
+  actions/     composition root that wires the server pieces into an Astro Action
+  features/    one folder per section (hero, about, experience, ide, projects, contact, resume, header, footer, seo, background)
+  ui/          primitives (Button, Tag, Section, Icon) + svg registries
+  assets/svg/  icons, brand (logo, wordmark) and decorations, ported from the own_base project
+  layouts/     Head, BaseLayout (landing), DocumentLayout (resume, 404)
+  views/       page-level composition, shared by every locale
+  pages/       thin routes: `<View locale="…" />`
+  styles/      tokens.css (only place with raw values) + base.css
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The IDE (`features/ide`) is split into `model/` (pure: content -> virtual repo, json/markdown tokenizers, git log),
+`state/` (tabs, tree) and `components/` (presentational). Windows/VS Code styling, off-canvas explorer on mobile.
 
-## 🚀 Project Structure
+Rules: pages never read collections directly; UI copy never lives in components; the server
+use case depends on interfaces (`Mailer`, `RateLimiter`), not on Resend.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Content
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+Edit `src/content/**`. Projects with `placeholder: true` show a "Sample" badge and are left out
+of the resume. Flip it to `false` once the content is real.
+
+## Setup
+
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+cp .env.example .env   # RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL
+bun install
+bun run dev
+bun run verify         # typecheck + tests + build
+```
