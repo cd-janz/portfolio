@@ -5,6 +5,7 @@ type: "personal"
 role: "Autor"
 summary: "Una configuración ligera de Neovim en Lua para liberar RAM para los servicios que realmente corro, sin perder un flujo full-stack."
 skills: ["Lua", "Neovim", "LSP", "Treesitter"]
+featured: true
 order: 3
 ---
 **Problema.** Los IDEs pesados competían por memoria con los microservicios locales.

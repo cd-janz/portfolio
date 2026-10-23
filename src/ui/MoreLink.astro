@@ -1,0 +1,14 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { href: string; }
+const { href } = Astro.props;
+---
+<a class="more" {href}><slot /><Icon name="right-arrow" size="1.1em" /></a>
+
+<style>
+  .more { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); border-bottom: 1px solid var(--border-strong); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; }
+  .more :global(.icon) { transition: transform 0.25s var(--ease); }
+  .more:hover { color: var(--accent); border-color: var(--accent); }
+  .more:hover :global(.icon) { transform: translateX(4px); }
+</style>

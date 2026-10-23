@@ -6,8 +6,8 @@ import { ui } from '../i18n/ui';
 import type { Locale } from '../i18n/locales';
 import Head from './Head.astro';
 
-interface Props { locale: Locale; title: string; description: string; jobTitle: string; }
-const { locale, ...head } = Astro.props;
+interface Props { locale: Locale; title: string; description: string; jobTitle: string; path?: string; current?: string; onHome?: boolean; }
+const { locale, current, onHome, ...head } = Astro.props;
 const t = ui(locale);
 ---
 <!doctype html>
@@ -16,7 +16,7 @@ const t = ui(locale);
   <body>
     <a class="skip sr-only" href="#main">{t.skipToContent}</a>
     <Background />
-    <Header {locale} />
+    <Header {locale} {current} {onHome} />
     <main id="main"><slot /></main>
     <Footer {locale} />
   </body>

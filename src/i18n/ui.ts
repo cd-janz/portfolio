@@ -9,7 +9,9 @@ export interface UiStrings {
   hero: { eyebrow: string; cta: string; secondaryCta: string; available: string };
   sections: { about: string; experience: string; education: string; projects: string; code: string; contact: string };
   titles: { experience: string; education: string; projects: string; code: string; contact: string };
-  experience: { present: string };
+  experience: { present: string; responsibilities: string; moreStack: string };
+  more: { experience: string; projects: string };
+  pages: { back: string; experience: { title: string; lead: string }; projects: { title: string; lead: string } };
   ide: { menu: string[]; explorer: string; projects: string; terminal: string; output: string; emptyEditor: string; openToWork: string; closeFile: string; sampleNote: string };
   projects: { sample: string; code: string; live: string; details: string; close: string };
   contactInfo: { lead: string; direct: string };
@@ -56,7 +58,13 @@ const en: UiStrings = {
     code: 'Browse my career like a codebase',
     contact: 'Let’s build something solid together',
   },
-  experience: { present: 'Present' },
+  experience: { present: 'Present', responsibilities: 'What I did', moreStack: 'more' },
+  more: { experience: 'See full experience', projects: 'See all projects' },
+  pages: {
+    back: 'Back to home',
+    experience: { title: 'Full experience', lead: 'Every role in detail: what I did, what it delivered and the stack behind it.' },
+    projects: { title: 'All projects', lead: 'Beyond the highlights: professional work, tests and personal experiments.' },
+  },
   ide: { menu: ['File', 'Edit', 'Selection', 'View', 'Go', 'Run', 'Terminal', 'Help'], explorer: 'Explorer', projects: 'Projects', terminal: 'Terminal', output: 'Output', emptyEditor: 'Select a file to open it', openToWork: 'Open to work', closeFile: 'Close', sampleNote: 'Sample content' },
   projects: { sample: 'Sample', code: 'Code', live: 'Live', details: 'Case study', close: 'Close' },
   contactInfo: {
@@ -106,7 +114,13 @@ const es: UiStrings = {
     code: 'Explora mi trayectoria como un repositorio',
     contact: 'Construyamos algo sólido juntos',
   },
-  experience: { present: 'Actualidad' },
+  experience: { present: 'Actualidad', responsibilities: 'Qué hice', moreStack: 'más' },
+  more: { experience: 'Ver experiencia completa', projects: 'Ver todos los proyectos' },
+  pages: {
+    back: 'Volver al inicio',
+    experience: { title: 'Experiencia completa', lead: 'Cada rol en detalle: qué hice, qué logró y el stack detrás.' },
+    projects: { title: 'Todos los proyectos', lead: 'Más allá de lo destacado: trabajo profesional, pruebas y experimentos personales.' },
+  },
   ide: { menu: ['Archivo', 'Editar', 'Selección', 'Ver', 'Ir', 'Ejecutar', 'Terminal', 'Ayuda'], explorer: 'Explorador', projects: 'Proyectos', terminal: 'Terminal', output: 'Salida', emptyEditor: 'Selecciona un archivo para abrirlo', openToWork: 'Disponible', closeFile: 'Cerrar', sampleNote: 'Contenido de ejemplo' },
   projects: { sample: 'Ejemplo', code: 'Código', live: 'En vivo', details: 'Caso de estudio', close: 'Cerrar' },
   contactInfo: {

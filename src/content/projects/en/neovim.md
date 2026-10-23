@@ -5,6 +5,7 @@ type: "personal"
 role: "Author"
 summary: "A lean, Lua-based Neovim setup built to free RAM for the services I actually run, without giving up a full-stack workflow."
 skills: ["Lua", "Neovim", "LSP", "Treesitter"]
+featured: true
 order: 3
 ---
 **Problem.** Heavy IDEs competed with local microservices for memory.

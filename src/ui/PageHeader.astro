@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+
+interface Props { eyebrow: string; title: string; lead?: string; backHref: string; backLabel: string; }
+const { eyebrow, title, lead, backHref, backLabel } = Astro.props;
+---
+<header class="page-head container">
+  <a class="back" href={backHref}><Icon name="right-arrow" size="1.1em" />{backLabel}</a>
+  <p class="eyebrow"><span aria-hidden="true">/</span> {eyebrow}</p>
+  <h1>{title}</h1>
+  {lead && <p class="lead">{lead}</p>}
+</header>
+
+<style>
+  .page-head { display: grid; gap: var(--space-3); padding-top: calc(var(--header-h) + var(--space-16)); padding-bottom: var(--space-12); justify-items: start; }
+  .back { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-mono); font-size: 0.82rem; color: var(--text-muted); }
+  .back :global(.icon) { transform: rotate(180deg); transition: transform 0.25s var(--ease); }
+  .back:hover { color: var(--accent); }
+  .back:hover :global(.icon) { transform: rotate(180deg) translateX(4px); }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-top: var(--space-4); }
+  h1 { font-size: clamp(3.2rem, 8vw, 6rem); line-height: 0.95; }
+  .lead { max-width: 60ch; color: var(--text-muted); font-size: 1.15rem; }
+</style>
