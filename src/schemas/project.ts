@@ -12,6 +12,8 @@ export const projectSchema = z.object({
   live: z.url().optional(),
   /** Mock content waiting to be replaced. The UI labels these as samples. */
   placeholder: z.boolean().default(false),
+  /** Shown on the home page; everything else lives on /projects. */
+  featured: z.boolean().default(false),
   order: z.number().default(100),
 });
 export type Project = z.infer<typeof projectSchema>;

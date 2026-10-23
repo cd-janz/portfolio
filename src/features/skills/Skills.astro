@@ -1,0 +1,53 @@
+---
+import Section from '../../ui/Section.astro';
+import type { SkillGroup } from '../../domain/skills';
+import { localePath } from '../../i18n/paths';
+import { ui } from '../../i18n/ui';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; groups: SkillGroup[]; }
+const { locale, groups } = Astro.props;
+const t = ui(locale);
+
+const focus = groups.filter((g) => g.tier !== 'also');
+const also = groups.find((g) => g.tier === 'also');
+---
+<Section id="skills" eyebrow={t.sections.skills} title={t.titles.skills} more={{ href: localePath(locale, 'skills'), label: t.more.skills }}>
+  <div class="grid">
+    {focus.map((g) => (
+      <article class="card" data-tier={g.tier}>
+        <p class="tier">{t.skills.tiers[g.tier]}</p>
+        <h3>{g.title}</h3>
+        <p class="desc">{g.description}</p>
+        <ul class="chips">
+          {g.items.map((i) => (
+            <li class="chip" class:list={{ learning: i.status === 'learning' }} title={i.status === 'learning' ? t.skills.learning : undefined}>{i.name}</li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+  {also && <p class="also"><span>{t.skills.alsoLabel}</span> {also.items.map((i) => i.name).join(' · ')}</p>}
+</Section>
+
+<style>
+  .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-4); }
+  .card { display: grid; gap: var(--space-3); align-content: start; padding: var(--space-8); border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 88%, transparent); transition: border-color 0.25s, transform 0.3s var(--ease); }
+  .card:hover { border-color: color-mix(in oklab, var(--accent) 45%, var(--border)); transform: translateY(-3px); }
+  /* Priority is expressed by size and order, never by self-rated levels. */
+  [data-tier='primary'] { grid-column: span 3; }
+  [data-tier='secondary'] { grid-column: span 4; }
+  [data-tier='tertiary'] { grid-column: span 2; }
+  [data-tier='growing'] { grid-column: 1 / -1; border-color: color-mix(in oklab, var(--accent) 40%, var(--border)); background: linear-gradient(135deg, var(--accent-soft), color-mix(in oklab, var(--surface) 88%, transparent) 60%); }
+  .tier { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); }
+  [data-tier='growing'] .tier { color: var(--accent); }
+  h3 { font-size: 2.6rem; }
+  [data-tier='primary'] h3 { font-size: 3.4rem; }
+  .desc { color: var(--text-muted); font-size: 0.95rem; max-width: 56ch; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: var(--space-2); }
+  .chip { padding: 0.2rem 0.7rem; border-radius: var(--radius-pill); border: 1px solid var(--border-strong); font-family: var(--font-mono); font-size: 0.78rem; color: var(--text); background: var(--surface); }
+  .chip.learning { border-style: dashed; color: var(--text-muted); }
+  .also { margin-top: var(--space-6); font-size: 0.9rem; color: var(--text-muted); }
+  .also span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-right: var(--space-2); }
+  @media (max-width: 900px) { [data-tier='primary'], [data-tier='secondary'], [data-tier='tertiary'] { grid-column: span 6; } .card { padding: var(--space-6); } }
+</style>

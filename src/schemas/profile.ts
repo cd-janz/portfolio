@@ -12,8 +12,5 @@ export const profileSchema = z.object({
   languages: z.array(z.object({ name: z.string(), level: z.string() })),
   workMode: z.string(),
   stats: z.array(z.object({ value: z.string(), label: z.string() })),
-  focus: z.array(
-    z.object({ title: z.string(), description: z.string(), skills: z.array(z.string()) }),
-  ),
 });
 export type Profile = z.infer<typeof profileSchema>;

@@ -1,41 +1,39 @@
 {
   "firstName": "Juan Camilo",
   "lastName": "Zúñiga",
-  "role": "Ingeniero Full-stack",
+  "role": "Ingeniero Backend · Go y JVM",
   "headline": "Construyo los sistemas sobre los que corre tu negocio.",
-  "tagline": "Ingeniero de sistemas enfocado en arquitectura limpia, interfaces rápidas y software que sigue siendo mantenible a medida que la empresa crece.",
+  "tagline": "Ingeniero backend que construye con Go y la JVM, TypeScript a lo largo del stack, y creciendo hacia AWS, DevOps y desarrollo cloud-first.",
   "aboutTitle": "El humano en el ciclo",
   "about": [
     "Entré a la tecnología a los 18 como una decisión consciente y poco tradicional, y se volvió el centro de mi vida. Aprendo más rápido donde todo es más difícil: un cuello de botella técnico es, para mí, un campo de juego.",
     "He liderado la migración y modernización de plataformas SaaS financieras y contables, diseñado backends en NestJS y ASP.NET Core, y entregado interfaces rápidas con React, Next.js y Astro.",
-    "Me importa el corazón del problema: entender qué necesita el negocio, elegir la arquitectura más simple que lo resuelva y dejar un código con el que la siguiente persona disfrute trabajar."
+    "Me importa entender qué necesita el negocio y elegir la arquitectura más simple que lo resuelva. Hoy mi centro de gravedad es Go y la JVM (Java, Kotlin, Spring Boot), con TypeScript a lo largo del stack, y estoy creciendo hacia AWS, infraestructura como código y DevOps para construir cloud-first."
   ],
   "location": "Santa Marta, Colombia",
   "languages": [
-    { "name": "Español", "level": "Nativo" },
-    { "name": "Inglés", "level": "B1" }
+    {
+      "name": "Español",
+      "level": "Nativo"
+    },
+    {
+      "name": "Inglés",
+      "level": "B1"
+    }
   ],
   "workMode": "Remoto / Híbrido · Dispuesto a reubicarme",
   "stats": [
-    { "value": "4+", "label": "años construyendo software en producción" },
-    { "value": "3", "label": "ecosistemas backend: Node, .NET, Java" },
-    { "value": "5", "label": "productos freelance entregados de punta a punta" }
-  ],
-  "focus": [
     {
-      "title": "Frontend",
-      "description": "Interfaces escalables y con arquitectura sólida.",
-      "skills": ["React", "Next.js", "Angular", "Astro", "SolidJS"]
+      "value": "4+",
+      "label": "años construyendo software en producción"
     },
     {
-      "title": "Backend",
-      "description": "Sistemas del lado del servidor, lógicos y performantes.",
-      "skills": ["NestJS", "ASP.NET Core", "Spring Boot", "SQL / NoSQL"]
+      "value": "Go · JVM",
+      "label": "mi stack principal, con TypeScript y Python alrededor"
     },
     {
-      "title": "Móvil y Cloud",
-      "description": "Apps multiplataforma y entrega con contenedores.",
-      "skills": ["React Native", "Flutter", "Docker", "AWS"]
+      "value": "5",
+      "label": "productos freelance entregados de punta a punta"
     }
   ]
 }

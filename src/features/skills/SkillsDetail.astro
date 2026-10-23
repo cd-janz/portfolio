@@ -1,0 +1,80 @@
+---
+import type { SkillGroup } from '../../domain/skills';
+import type { SkillsCopy } from '../../schemas/skills-copy';
+import { ui } from '../../i18n/ui';
+import type { Locale } from '../../i18n/locales';
+
+interface Props { locale: Locale; groups: SkillGroup[]; heading: SkillsCopy['heading']; }
+const { locale, groups, heading } = Astro.props;
+const t = ui(locale);
+const statusLabel = { production: t.skills.production, 'hands-on': t.skills.handsOn, learning: t.skills.learning } as const;
+---
+<div class="groups">
+  {groups.map((g) => (
+    <section class="group" data-tier={g.tier} aria-labelledby={`skill-${g.id}`}>
+      <header class="head">
+        <p class="tier">{t.skills.tiers[g.tier]}</p>
+        <h2 id={`skill-${g.id}`}>{g.title}</h2>
+        <p class="desc">{g.description}</p>
+      </header>
+      <table>
+        <caption class="sr-only">{g.title}</caption>
+        <thead>
+          <tr><th scope="col">{t.skills.tech}</th><th scope="col">{t.skills.since}</th><th scope="col">{t.skills.status}</th><th scope="col">{t.skills.usedIn}</th></tr>
+        </thead>
+        <tbody>
+          {g.items.map((i) => (
+            <tr>
+              <th scope="row">{i.name}</th>
+              <td data-label={t.skills.since}>{i.since ?? '—'}</td>
+              <td data-label={t.skills.status}><span class="status" data-status={i.status}>{statusLabel[i.status]}</span></td>
+              <td data-label={t.skills.usedIn}>
+                {i.usedIn.length
+                  ? i.usedIn.map((e, n) => <>{n > 0 && ', '}<a href={e.href}>{e.label}</a></>)
+                  : '—'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  ))}
+
+  <aside class="direction" aria-labelledby="direction-title">
+    <p class="tier">{t.skills.tiers.growing}</p>
+    <h2 id="direction-title">{heading.direction}</h2>
+    <p class="desc">{heading.directionLead}</p>
+    <ul class="chips">{heading.directionItems.map((item) => <li class="chip">{item}</li>)}</ul>
+  </aside>
+</div>
+
+<style>
+  .groups { display: grid; gap: var(--space-8); }
+  .group { display: grid; gap: var(--space-6); padding: var(--space-8); border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 88%, transparent); }
+  [data-tier='growing'] { border-color: color-mix(in oklab, var(--accent) 40%, var(--border)); }
+  .head { display: grid; gap: var(--space-2); }
+  .tier { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-faint); }
+  [data-tier='growing'] .tier, .direction .tier { color: var(--accent); }
+  h2 { font-size: 2.8rem; }
+  .desc { color: var(--text-muted); max-width: 60ch; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.7rem 0.5rem; border-top: 1px solid var(--border); vertical-align: top; }
+  thead th { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); font-weight: 500; border-top: 0; }
+  tbody th { font-weight: 600; color: var(--text); }
+  td { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.82rem; }
+  td a { color: var(--accent); } td a:hover { text-decoration: underline; }
+  .status { padding: 0.12rem 0.6rem; border-radius: var(--radius-pill); border: 1px solid var(--border-strong); font-size: 0.74rem; color: var(--text); white-space: nowrap; }
+  .status[data-status='hands-on'] { border-color: color-mix(in oklab, var(--accent-2) 50%, transparent); }
+  .status[data-status='learning'] { border-style: dashed; color: var(--text-muted); }
+  .direction { display: grid; gap: var(--space-3); padding: var(--space-8); border-radius: var(--radius-lg); border: 1px solid color-mix(in oklab, var(--accent) 40%, var(--border)); background: linear-gradient(135deg, var(--accent-soft), transparent 70%); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-2); }
+  .chip { padding: 0.3rem 0.9rem; border-radius: var(--radius-pill); border: 1px solid color-mix(in oklab, var(--accent) 50%, transparent); font-family: var(--font-mono); font-size: 0.85rem; }
+  @media (max-width: 720px) {
+    .group, .direction { padding: var(--space-6); }
+    thead { display: none; }
+    tr { display: grid; grid-template-columns: 1fr 1fr; gap: 2px var(--space-4); padding: 0.7rem 0; border-top: 1px solid var(--border); }
+    th, td { border: 0; padding: 0.15rem 0; }
+    tbody th { grid-column: 1 / -1; }
+    td::before { content: attr(data-label); display: block; font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  }
+</style>

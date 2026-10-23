@@ -10,7 +10,7 @@ const t = ui(input.locale);
 const workspace = buildWorkspace({ ...input, t });
 ---
 <div class="ide-only">
-  <Section id="code" eyebrow={t.sections.code} title={t.titles.code} wide>
+  <Section id="code" eyebrow={t.sections.code} title={t.titles.code}>
     <IdeWindow client:visible {workspace} labels={t.ide} locale={input.locale} user="janz" />
   </Section>
 </div>

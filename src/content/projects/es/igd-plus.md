@@ -6,6 +6,7 @@ role: "Líder técnico"
 summary: "Núcleo empresarial modular con arquitectura inspirada en microkernel: contabilidad, créditos y operaciones como módulos aislados."
 skills: ["TypeScript", "React", "Tailwind", "ASP.NET Core", "SQL"]
 placeholder: true
+featured: true
 order: 2
 ---
 **Problema.** Un software de gestión que debía crecer módulo a módulo sin desestabilizar el núcleo.

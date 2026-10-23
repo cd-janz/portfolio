@@ -8,8 +8,10 @@ import type { Locale } from '../../i18n/locales';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const t = ui(locale);
+const ui_phone = t.contactInfo.phone;
 const channels = [
   { label: 'Email', href: `mailto:${SITE.email}`, value: SITE.email },
+  { label: ui_phone, href: SITE.phone.href, value: SITE.phone.display },
   { label: 'LinkedIn', href: SITE.social.linkedin, value: 'juanzuniga79' },
   { label: 'GitHub', href: SITE.social.github, value: SITE.handle },
   { label: 'Telegram', href: SITE.social.telegram, value: '@janz7924' },
@@ -33,13 +35,14 @@ const channels = [
 </Section>
 
 <style>
-  .layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-12); align-items: start; }
+  .layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: var(--space-12); align-items: stretch; }
+  .side { display: flex; flex-direction: column; }
   .lead { font-size: 1.15rem; color: var(--text-muted); max-width: 40ch; }
   .direct { margin-top: var(--space-8); font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.1em; }
-  .channels { margin-top: var(--space-3); display: grid; gap: var(--space-2); }
-  .channels a { display: flex; justify-content: space-between; gap: var(--space-4); padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; }
+  .channels { margin-top: var(--space-3); margin-bottom: auto; display: grid; gap: var(--space-2); }
+  .channels a { display: flex; justify-content: space-between; gap: var(--space-4); padding: 0.85rem 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: color-mix(in oklab, var(--surface) 55%, transparent); backdrop-filter: blur(14px) saturate(1.2); transition: border-color 0.2s, background 0.2s; }
   .channels a:hover { border-color: var(--accent); background: var(--accent-soft); }
   .channels span { color: var(--text-muted); } .channels b { font-weight: 500; }
-  .panel { padding: var(--space-8); border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 88%, transparent); }
+  .panel { padding: var(--space-8); border: 1px solid var(--border); border-radius: var(--radius-lg); background: color-mix(in oklab, var(--surface) 60%, transparent); backdrop-filter: blur(18px) saturate(1.2); }
   @media (max-width: 860px) { .layout { grid-template-columns: 1fr; gap: var(--space-8); } .panel { padding: var(--space-6); } }
 </style>

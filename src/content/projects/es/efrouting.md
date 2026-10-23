@@ -7,6 +7,7 @@ summary: "Visualizador de lanzamientos de SpaceX con Go y Next.js, arquitectura 
 skills: ["Go", "Next.js", "TypeScript", "Python", "AWS CDK", "DynamoDB"]
 picture: "https://raw.githubusercontent.com/cd-janz/projects_resourses/refs/heads/main/efRouting/ss1.png"
 repo: "https://github.com/cd-janz/efRouting_test"
+featured: true
 order: 1
 ---
 **Problema.** Visualizar datos de SpaceX con una solución cloud rápida, escalable y reproducible.

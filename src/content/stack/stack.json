@@ -1,0 +1,41 @@
+{
+  "groups": [
+    { "id": "go", "tier": "primary" },
+    { "id": "jvm", "tier": "primary" },
+    { "id": "typescript", "tier": "secondary" },
+    { "id": "python", "tier": "tertiary" },
+    { "id": "cloud", "tier": "growing" },
+    { "id": "also", "tier": "also" }
+  ],
+  "technologies": [
+    { "name": "Go", "group": "go", "since": "01/2024", "status": "hands-on", "usedIn": ["project:efrouting"] },
+    { "name": "Gin", "group": "go", "since": "12/2024", "status": "hands-on" },
+    { "name": "Fiber", "group": "go", "since": "02/2024", "status": "hands-on" },
+
+    { "name": "Java", "group": "jvm", "since": "01/2020", "usedIn": ["experience:igd"] },
+    { "name": "Kotlin", "group": "jvm", "since": "12/2023", "status": "hands-on" },
+    { "name": "Spring Boot", "group": "jvm", "since": "08/2021", "usedIn": ["experience:igd", "experience:freelance"] },
+
+    { "name": "TypeScript", "group": "typescript", "since": "01/2020", "usedIn": ["experience:igd", "project:igd-plus", "project:efrouting"] },
+    { "name": "NestJS", "group": "typescript", "since": "01/2022", "usedIn": ["experience:igd", "experience:freelance"] },
+    { "name": "React", "group": "typescript", "since": "03/2020", "usedIn": ["experience:igd", "experience:freelance"] },
+    { "name": "Next.js", "group": "typescript", "since": "08/2021", "usedIn": ["experience:igd", "project:efrouting"] },
+    { "name": "Angular", "group": "typescript", "since": "09/2021", "usedIn": ["experience:igd"] },
+    { "name": "Astro", "group": "typescript", "since": "08/2023", "usedIn": ["experience:igd"] },
+
+    { "name": "Python", "group": "python", "status": "hands-on", "usedIn": ["project:efrouting"] },
+
+    { "name": "AWS", "group": "cloud", "status": "hands-on", "usedIn": ["project:efrouting"] },
+    { "name": "AWS CDK", "group": "cloud", "status": "hands-on", "usedIn": ["project:efrouting"] },
+    { "name": "ECS Fargate", "group": "cloud", "status": "hands-on", "usedIn": ["project:efrouting"] },
+    { "name": "DynamoDB", "group": "cloud", "status": "hands-on", "usedIn": ["project:efrouting"] },
+    { "name": "Docker", "group": "cloud", "usedIn": ["experience:igd"] },
+    { "name": "Kubernetes", "group": "cloud", "status": "learning" },
+
+    { "name": "C#", "group": "also", "since": "10/2020", "usedIn": ["experience:igd"] },
+    { "name": "ASP.NET Core", "group": "also", "since": "08/2021", "usedIn": ["experience:igd", "experience:freelance"] },
+    { "name": "SQL", "group": "also", "since": "03/2020" },
+    { "name": "React Native", "group": "also", "usedIn": ["experience:freelance"] },
+    { "name": "Lua", "group": "also", "since": "08/2023", "usedIn": ["project:neovim"] }
+  ]
+}
