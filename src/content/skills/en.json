@@ -1,16 +1,38 @@
 {
   "groups": {
-    "go": { "title": "Go", "description": "Small, fast services with a clear architecture. My main language for backends." },
-    "jvm": { "title": "Java & Kotlin", "description": "The JVM for systems that must stay reliable for years: Java, Kotlin and Spring Boot." },
-    "typescript": { "title": "TypeScript", "description": "One language from the API to the interface: NestJS, React, Next.js and Astro." },
-    "python": { "title": "Python", "description": "Data pipelines and automation around the main services." },
-    "cloud": { "title": "Cloud & DevOps", "description": "Where I'm heading: infrastructure as code, containers and AWS, designed in from day one." },
-    "also": { "title": "Also worked with", "description": "Used in production or personal projects, not my current focus." }
+    "jvm": {
+      "title": "Java & Kotlin",
+      "description": "The JVM for systems that must stay reliable for years: Java, Kotlin, Spring Boot and solid SQL."
+    },
+    "typescript": {
+      "title": "TypeScript & Angular",
+      "description": "Typed code from the API to the interface: Angular for product UIs, Astro for fast sites and NestJS on the server."
+    },
+    "go": {
+      "title": "Go",
+      "description": "High-performance backends and CLI tools: small services, a single binary and no virtual machine to run."
+    },
+    "react": {
+      "title": "React & Next.js",
+      "description": "The React ecosystem when a project calls for it."
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "Where I'm heading: infrastructure as code, containers and AWS, designed in from day one."
+    },
+    "also": {
+      "title": "Also worked with",
+      "description": "Used in production or personal projects, not my current focus."
+    }
   },
   "heading": {
     "lead": "Technologies, since when, and where I actually used them. No self-rated bars.",
     "direction": "Where I’m heading",
     "directionLead": "I’m building towards cloud-first development.",
-    "directionItems": ["AWS", "DevOps", "Cloud-first development"]
+    "directionItems": [
+      "AWS",
+      "DevOps",
+      "Cloud-first development"
+    ]
   }
 }

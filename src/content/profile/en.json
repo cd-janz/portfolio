@@ -1,14 +1,14 @@
 {
   "firstName": "Juan Camilo",
   "lastName": "Zúñiga",
-  "role": "Backend Engineer · Go & JVM",
+  "role": "Software Engineer · JVM & Angular",
   "headline": "I build the systems your business runs on.",
-  "tagline": "Backend engineer building with Go and the JVM, TypeScript across the stack, and growing into AWS, DevOps and cloud-first development.",
+  "tagline": "Software engineer building with the JVM (Java, Kotlin) and Angular, Go for high-performance backends, and growing into AWS, DevOps and cloud-first development.",
   "aboutTitle": "The human in the loop",
   "about": [
     "I started in technology at 18 as a deliberate, non-traditional choice, and it became the center of my life. I learn fastest where things are hardest: a tough technical bottleneck is, for me, a playground.",
     "I have led the migration and modernization of fintech and accounting SaaS platforms, designed backends in NestJS and ASP.NET Core, and shipped fast interfaces with React, Next.js and Astro.",
-    "I care about understanding what the business needs and choosing the simplest architecture that solves it. Today my center of gravity is Go and the JVM (Java, Kotlin, Spring Boot), with TypeScript across the stack, and I’m growing into AWS, infrastructure as code and DevOps to build cloud-first."
+    "I care about understanding what the business needs and choosing the simplest architecture that solves it. Today my center of gravity is the JVM (Java, Kotlin, Spring Boot) and Angular, with Go for high-performance backends, and I’m growing into AWS, infrastructure as code and DevOps to build cloud-first."
   ],
   "location": "Santa Marta, Colombia",
   "languages": [
@@ -28,8 +28,8 @@
       "label": "years building production software"
     },
     {
-      "value": "Go · JVM",
-      "label": "my primary stack, with TypeScript and Python around it"
+      "value": "JVM · Angular",
+      "label": "my core stack, with Go for high-performance backends"
     },
     {
       "value": "5",
