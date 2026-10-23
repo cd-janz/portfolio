@@ -11,7 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "test": "bun test src",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "astro sync && tsc --noEmit",
     "verify": "bun run typecheck && bun run test && astro build"
   },
   "dependencies": {
