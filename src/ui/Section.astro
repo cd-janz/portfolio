@@ -1,7 +1,7 @@
 ---
 import MoreLink from './MoreLink.astro';
-interface Props { id: string; eyebrow: string; title?: string; wide?: boolean; more?: { href: string; label: string }; }
-const { id, eyebrow, title, wide = false, more } = Astro.props;
+interface Props { id: string; eyebrow: string; title?: string; more?: { href: string; label: string }; }
+const { id, eyebrow, title, more } = Astro.props;
 ---
 <section {id} aria-labelledby={`${id}-title`} class="section">
   <div class="container">
@@ -10,7 +10,7 @@ const { id, eyebrow, title, wide = false, more } = Astro.props;
       <h2 id={`${id}-title`} class:list={{ 'sr-only': !title }}>{title ?? eyebrow}</h2>
     </header>
   </div>
-  <div class:list={['container', { wide }]}>
+  <div class="container">
     <slot />
     {more && <p class="more-row"><MoreLink href={more.href}>{more.label}</MoreLink></p>}
   </div>
@@ -19,7 +19,7 @@ const { id, eyebrow, title, wide = false, more } = Astro.props;
 <style>
   .section { padding-block: var(--space-24); position: relative; }
   .more-row { margin-top: var(--space-8); display: flex; justify-content: flex-end; }
-  .head { margin-bottom: var(--space-12); display: grid; gap: var(--space-3); }
+  .head { margin-bottom: var(--space-12); display: grid; justify-items: center; gap: var(--space-3); text-align: center; }
   .eyebrow { font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); }
-  h2 { font-size: clamp(2.8rem, 6vw, 4.4rem); max-width: 20ch; line-height: 0.95; }
+  h2 { font-size: clamp(2.8rem, 6vw, 4.4rem); max-width: 28ch; text-wrap: balance; line-height: 0.95; }
 </style>
