@@ -3,15 +3,16 @@ import type { Locale } from './locales';
 /** Static UI copy. Long-form content lives in `src/content`. */
 export interface UiStrings {
   skipToContent: string;
-  nav: { home: string; experience: string; education: string; projects: string; contact: string };
+  nav: { home: string; skills: string; experience: string; education: string; projects: string; contact: string };
   resume: string;
   switchLanguage: string;
   hero: { eyebrow: string; cta: string; secondaryCta: string; available: string };
-  sections: { about: string; experience: string; education: string; projects: string; code: string; contact: string };
-  titles: { experience: string; education: string; projects: string; code: string; contact: string };
+  sections: { about: string; skills: string; experience: string; education: string; projects: string; code: string; contact: string };
+  titles: { skills: string; experience: string; education: string; projects: string; code: string; contact: string };
   experience: { present: string; responsibilities: string; moreStack: string };
-  more: { experience: string; projects: string };
-  pages: { back: string; experience: { title: string; lead: string }; projects: { title: string; lead: string } };
+  more: { skills: string; experience: string; projects: string };
+  skills: { since: string; usedIn: string; status: string; production: string; handsOn: string; learning: string; tech: string; alsoLabel: string; tiers: Record<'primary' | 'secondary' | 'tertiary' | 'growing' | 'also', string> };
+  pages: { back: string; skills: { title: string }; experience: { title: string; lead: string }; projects: { title: string; lead: string } };
   ide: { menu: string[]; explorer: string; projects: string; terminal: string; output: string; emptyEditor: string; openToWork: string; closeFile: string; sampleNote: string };
   projects: { sample: string; code: string; live: string; details: string; close: string };
   contactInfo: { lead: string; direct: string };
@@ -34,7 +35,7 @@ export interface UiStrings {
 
 const en: UiStrings = {
   skipToContent: 'Skip to content',
-  nav: { home: 'Home', experience: 'Experience', education: 'Education', projects: 'Projects', contact: 'Contact' },
+  nav: { home: 'Home', skills: 'Skills', experience: 'Experience', education: 'Education', projects: 'Projects', contact: 'Contact' },
   resume: 'Resume',
   switchLanguage: 'Español',
   hero: {
@@ -45,6 +46,7 @@ const en: UiStrings = {
   },
   sections: {
     about: 'About',
+    skills: 'Skills',
     experience: 'Experience',
     education: 'Education',
     projects: 'Selected work',
@@ -52,6 +54,7 @@ const en: UiStrings = {
     contact: 'Contact',
   },
   titles: {
+    skills: 'Technologies I trust, and where I proved them',
     experience: 'Where I’ve built, and what it delivered',
     education: 'The foundation behind the work',
     projects: 'Work that shows how I think',
@@ -59,9 +62,15 @@ const en: UiStrings = {
     contact: 'Let’s build something solid together',
   },
   experience: { present: 'Present', responsibilities: 'What I did', moreStack: 'more' },
-  more: { experience: 'See full experience', projects: 'See all projects' },
+  more: { skills: 'See full stack', experience: 'See full experience', projects: 'See all projects' },
+  skills: {
+    since: 'Since', usedIn: 'Used in', status: 'Status', tech: 'Technology', alsoLabel: 'Also worked with',
+    production: 'In production', handsOn: 'Hands-on', learning: 'Learning',
+    tiers: { primary: 'Primary', secondary: 'Secondary', tertiary: 'Around the stack', growing: 'Growing focus', also: 'Also' },
+  },
   pages: {
     back: 'Back to home',
+    skills: { title: 'Full stack' },
     experience: { title: 'Full experience', lead: 'Every role in detail: what I did, what it delivered and the stack behind it.' },
     projects: { title: 'All projects', lead: 'Beyond the highlights: professional work, tests and personal experiments.' },
   },
@@ -90,7 +99,7 @@ const en: UiStrings = {
 
 const es: UiStrings = {
   skipToContent: 'Saltar al contenido',
-  nav: { home: 'Inicio', experience: 'Experiencia', education: 'Educación', projects: 'Proyectos', contact: 'Contacto' },
+  nav: { home: 'Inicio', skills: 'Skills', experience: 'Experiencia', education: 'Educación', projects: 'Proyectos', contact: 'Contacto' },
   resume: 'Currículum',
   switchLanguage: 'English',
   hero: {
@@ -101,6 +110,7 @@ const es: UiStrings = {
   },
   sections: {
     about: 'Sobre mí',
+    skills: 'Skills',
     experience: 'Experiencia',
     education: 'Educación',
     projects: 'Trabajo destacado',
@@ -108,6 +118,7 @@ const es: UiStrings = {
     contact: 'Contacto',
   },
   titles: {
+    skills: 'Tecnologías en las que confío y dónde las demostré',
     experience: 'Dónde he construido y qué logré',
     education: 'La base detrás del trabajo',
     projects: 'Trabajo que muestra cómo pienso',
@@ -115,9 +126,15 @@ const es: UiStrings = {
     contact: 'Construyamos algo sólido juntos',
   },
   experience: { present: 'Actualidad', responsibilities: 'Qué hice', moreStack: 'más' },
-  more: { experience: 'Ver experiencia completa', projects: 'Ver todos los proyectos' },
+  more: { skills: 'Ver stack completo', experience: 'Ver experiencia completa', projects: 'Ver todos los proyectos' },
+  skills: {
+    since: 'Desde', usedIn: 'Usada en', status: 'Estado', tech: 'Tecnología', alsoLabel: 'También he trabajado con',
+    production: 'En producción', handsOn: 'Práctica', learning: 'Aprendiendo',
+    tiers: { primary: 'Principal', secondary: 'Secundario', tertiary: 'Alrededor del stack', growing: 'Foco en crecimiento', also: 'Además' },
+  },
   pages: {
     back: 'Volver al inicio',
+    skills: { title: 'Stack completo' },
     experience: { title: 'Experiencia completa', lead: 'Cada rol en detalle: qué hice, qué logró y el stack detrás.' },
     projects: { title: 'Todos los proyectos', lead: 'Más allá de lo destacado: trabajo profesional, pruebas y experimentos personales.' },
   },

@@ -7,17 +7,19 @@ import Education from '../features/education/Education.astro';
 import Experience from '../features/experience/Experience.astro';
 import Hero from '../features/hero/Hero.astro';
 import Projects from '../features/projects/Projects.astro';
+import Skills from '../features/skills/Skills.astro';
 import { SITE } from '../config/site';
-import { getEducation, getExperience, getProfile, getProjects } from '../data/queries';
+import { getEducation, getExperience, getProfile, getProjects, getSkills } from '../data/queries';
 import type { Locale } from '../i18n/locales';
 
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
-const [profile, experience, education, projects] = await Promise.all([
+const [profile, experience, education, projects, skills] = await Promise.all([
   getProfile(locale),
   getExperience(locale),
   getEducation(locale),
   getProjects(locale),
+  getSkills(locale),
 ]);
 ---
 <BaseLayout
@@ -27,8 +29,9 @@ const [profile, experience, education, projects] = await Promise.all([
   jobTitle={profile.role}
 >
   <Hero {locale} {profile} />
-  <Code {locale} {profile} {experience} {education} {projects} />
+  <Code {locale} {profile} {experience} {education} {projects} groups={skills.groups} />
   <About {locale} {profile} />
+  <Skills {locale} groups={skills.groups} />
   <Experience {locale} items={experience} />
   <Education {locale} items={education} />
   <Projects {locale} {projects} />

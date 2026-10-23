@@ -5,6 +5,7 @@ import type { Locale } from '../../../i18n/locales';
 import type { UiStrings } from '../../../i18n/ui';
 import type { Education } from '../../../schemas/education';
 import type { Experience } from '../../../schemas/experience';
+import type { SkillGroup } from '../../../domain/skills';
 import type { Profile } from '../../../schemas/profile';
 import { gitLog } from './git-log';
 import { jsonDocument } from './json-document';
@@ -18,6 +19,7 @@ export interface WorkspaceInput {
   experience: (Experience & { id: string })[];
   education: (Education & { id: string })[];
   projects: ProjectItem[];
+  groups: SkillGroup[];
 }
 
 const jsonFile = (folder: string, id: string, content: Record<string, unknown>): IdeFile => ({
@@ -47,7 +49,7 @@ const folder = (name: string, children: IdeFile[], defaultOpen = false): IdeFold
 });
 
 /** Turns portfolio content into a virtual repository. Pure: same input, same output. */
-export function buildWorkspace({ locale, t, profile, experience, education, projects }: WorkspaceInput): Workspace {
+export function buildWorkspace({ locale, t, profile, experience, education, projects, groups }: WorkspaceInput): Workspace {
   const experienceFiles = experience.map((e) => {
     const end = e.end ? parseDate(e.end) : new Date();
     return jsonFile('experience', e.id, {
@@ -105,7 +107,7 @@ export function buildWorkspace({ locale, t, profile, experience, education, proj
       `## ${profile.aboutTitle}`,
       ...profile.about.flatMap((p) => [p, '']),
       '## Stack',
-      ...profile.focus.map((f) => `- **${f.title}**: ${f.skills.join(', ')}`),
+      ...groups.filter((g) => g.tier !== 'also').map((g) => `- **${g.title}**: ${g.items.map((i) => i.name).join(', ')}`),
       '',
       '## Contact',
       `- ${SITE.email}`,

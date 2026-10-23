@@ -1,0 +1,16 @@
+{
+  "groups": {
+    "go": { "title": "Go", "description": "Servicios pequeños y rápidos con arquitectura clara. Mi lenguaje principal para backends." },
+    "jvm": { "title": "Java y Kotlin", "description": "La JVM para sistemas que deben mantenerse fiables por años: Java, Kotlin y Spring Boot." },
+    "typescript": { "title": "TypeScript", "description": "Un solo lenguaje de la API a la interfaz: NestJS, React, Next.js y Astro." },
+    "python": { "title": "Python", "description": "Pipelines de datos y automatización alrededor de los servicios principales." },
+    "cloud": { "title": "Cloud y DevOps", "description": "Hacia dónde voy: infraestructura como código, contenedores y AWS, diseñados desde el primer día." },
+    "also": { "title": "También he trabajado con", "description": "Usadas en producción o en proyectos personales, fuera de mi foco actual." }
+  },
+  "heading": {
+    "lead": "Tecnologías, desde cuándo y dónde las usé de verdad. Sin barras de autoevaluación.",
+    "direction": "Hacia dónde voy",
+    "directionLead": "Estoy construyendo mi camino hacia el desarrollo cloud-first.",
+    "directionItems": ["AWS", "DevOps", "Desarrollo cloud-first"]
+  }
+}

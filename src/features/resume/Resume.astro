@@ -5,6 +5,7 @@ import type { Education } from '../../schemas/education';
 import type { Experience } from '../../schemas/experience';
 import type { Profile } from '../../schemas/profile';
 import type { ProjectItem } from '../../data/queries';
+import type { SkillGroup } from '../../domain/skills';
 import { localePath } from '../../i18n/paths';
 import { ui } from '../../i18n/ui';
 import type { Locale } from '../../i18n/locales';
@@ -15,12 +16,20 @@ interface Props {
   experience: (Experience & { id: string })[];
   education: (Education & { id: string })[];
   projects: ProjectItem[];
+  groups: SkillGroup[];
 }
-const { locale, profile, experience, education, projects } = Astro.props;
+const { locale, profile, experience, education, projects, groups } = Astro.props;
 const t = ui(locale);
 const period = (start: string, end?: string) =>
   `${formatMonthYear(start, locale)} – ${end ? formatMonthYear(end, locale) : t.resumePage.present}`;
-const skills = [...new Set(profile.focus.flatMap((f) => f.skills))];
+const withStatus = (name: string, status: string) => (status === 'learning' ? `${name} (${t.skills.learning.toLowerCase()})` : name);
+const skillLines = groups
+  .filter((g) => g.items.length)
+  .map((g) => {
+    const items = g.items.map((i) => withStatus(i.name, i.status));
+    // A group that only repeats its own name (e.g. Python) reads better without the label.
+    return { title: items.length === 1 && g.items[0].name === g.title ? '' : g.title, items: items.join(', ') };
+  });
 const realProjects = projects.filter((p) => !p.placeholder);
 ---
 <div class="toolbar">
@@ -80,7 +89,7 @@ const realProjects = projects.filter((p) => !p.placeholder);
 
   <section>
     <h2>{t.resumePage.skills}</h2>
-    <p>{skills.join(' · ')}</p>
+    {skillLines.map((l) => <p class="skill-line">{l.title && <b>{l.title}: </b>}{l.items}</p>)}
     <p class="sub">{profile.languages.map((l) => `${l.name}: ${l.level}`).join(' · ')}</p>
   </section>
 </article>
@@ -110,6 +119,7 @@ const realProjects = projects.filter((p) => !p.placeholder);
   h3 { font-size: 1.02rem; letter-spacing: 0; }
   .row span, .sub { font-size: 0.82rem; color: #6b7280; }
   .bullets { margin: 6px 0 6px 1.1rem; list-style: disc; display: grid; gap: 3px; }
+  .skill-line { margin-bottom: 4px; }
   .stack { font-size: 0.85rem; color: #4b5563; }
 
   @media print {

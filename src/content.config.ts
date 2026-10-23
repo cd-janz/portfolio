@@ -4,6 +4,8 @@ import { educationSchema } from './schemas/education';
 import { experienceSchema } from './schemas/experience';
 import { profileSchema } from './schemas/profile';
 import { projectSchema } from './schemas/project';
+import { skillsCopySchema } from './schemas/skills-copy';
+import { stackSchema } from './schemas/stack';
 
 // Content is organised as `<collection>/<locale>/<entry>`; the entry id carries the locale.
 const profile = defineCollection({
@@ -26,4 +28,15 @@ const education = defineCollection({
   schema: educationSchema,
 });
 
-export const collections = { profile, experience, projects, education };
+// Technologies are language-neutral facts; their group copy is localized.
+const stack = defineCollection({
+  loader: glob({ pattern: 'stack.json', base: './src/content/stack' }),
+  schema: stackSchema,
+});
+
+const skills = defineCollection({
+  loader: glob({ pattern: '*.json', base: './src/content/skills' }),
+  schema: skillsCopySchema,
+});
+
+export const collections = { profile, experience, projects, education, stack, skills };

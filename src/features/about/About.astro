@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 import Section from '../../ui/Section.astro';
-import Tag from '../../ui/Tag.astro';
 import portrait from '../../assets/profile.jpg';
 import type { Profile } from '../../schemas/profile';
 import { ui } from '../../i18n/ui';
@@ -27,15 +26,6 @@ const t = ui(locale);
       <div class="prose">
         {profile.about.map((p) => <p>{p}</p>)}
       </div>
-      <ul class="focus">
-        {profile.focus.map((f) => (
-          <li class="card">
-            <h3>{f.title}</h3>
-            <p>{f.description}</p>
-            <div class="tags">{f.skills.map((s) => <Tag>{s}</Tag>)}</div>
-          </li>
-        ))}
-      </ul>
     </div>
   </div>
 </Section>
@@ -52,10 +42,5 @@ const t = ui(locale);
   .body { display: grid; gap: var(--space-8); }
   .prose { display: grid; gap: var(--space-4); font-size: 1.08rem; color: var(--text-muted); max-width: 66ch; }
   .prose p:first-child { color: var(--text); font-size: 1.2rem; }
-  .focus { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--space-4); }
-  .focus .card { display: grid; gap: var(--space-3); align-content: start; transition: border-color 0.25s, transform 0.3s var(--ease); }
-  .focus .card:hover { border-color: color-mix(in oklab, var(--accent) 50%, var(--border)); transform: translateY(-3px); }
-  .focus p { color: var(--text-muted); font-size: 0.95rem; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
   @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } .profile { position: static; grid-template-columns: 120px 1fr; align-items: center; } .photo { grid-row: span 3; } .facts, .mode { grid-column: 2; } }
 </style>
