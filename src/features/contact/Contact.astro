@@ -8,8 +8,10 @@ import type { Locale } from '../../i18n/locales';
 interface Props { locale: Locale; }
 const { locale } = Astro.props;
 const t = ui(locale);
+const ui_phone = t.contactInfo.phone;
 const channels = [
   { label: 'Email', href: `mailto:${SITE.email}`, value: SITE.email },
+  { label: ui_phone, href: SITE.phone.href, value: SITE.phone.display },
   { label: 'LinkedIn', href: SITE.social.linkedin, value: 'juanzuniga79' },
   { label: 'GitHub', href: SITE.social.github, value: SITE.handle },
   { label: 'Telegram', href: SITE.social.telegram, value: '@janz7924' },

@@ -43,6 +43,7 @@ const realProjects = projects.filter((p) => !p.placeholder);
     <p class="role">{profile.role}</p>
     <ul class="contact">
       <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li><a href={SITE.phone.href}>{SITE.phone.display}</a></li>
       <li><a href={SITE.social.linkedin}>linkedin.com/in/juanzuniga79</a></li>
       <li><a href={SITE.social.github}>github.com/{SITE.handle}</a></li>
       <li>{profile.location}</li>

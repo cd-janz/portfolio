@@ -15,7 +15,7 @@ export interface UiStrings {
   pages: { back: string; skills: { title: string }; experience: { title: string; lead: string }; projects: { title: string; lead: string } };
   ide: { menu: string[]; explorer: string; projects: string; terminal: string; output: string; emptyEditor: string; openToWork: string; closeFile: string; sampleNote: string };
   projects: { sample: string; code: string; live: string; details: string; close: string };
-  contactInfo: { lead: string; direct: string };
+  contactInfo: { lead: string; direct: string; phone: string };
   contact: {
     name: string;
     email: string;
@@ -79,6 +79,7 @@ const en: UiStrings = {
   contactInfo: {
     lead: 'Hiring, a project or just a technical question? Write me and I’ll reply within 24 hours.',
     direct: 'Prefer a direct channel?',
+    phone: 'Phone',
   },
   contact: {
     name: 'Name',
@@ -143,6 +144,7 @@ const es: UiStrings = {
   contactInfo: {
     lead: '¿Contratación, un proyecto o solo una duda técnica? Escríbeme y te respondo en menos de 24 horas.',
     direct: '¿Prefieres un canal directo?',
+    phone: 'Teléfono',
   },
   contact: {
     name: 'Nombre',

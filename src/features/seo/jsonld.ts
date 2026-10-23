@@ -7,6 +7,7 @@ export const personJsonLd = (jobTitle: string, description: string) => ({
   jobTitle,
   description,
   url: SITE.url,
-  email: `mailto:${SITE.email}`,
+  email: SITE.email,
+  telephone: SITE.phone.display,
   sameAs: [SITE.social.github, SITE.social.linkedin],
 });

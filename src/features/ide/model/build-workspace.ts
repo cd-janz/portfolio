@@ -111,6 +111,7 @@ export function buildWorkspace({ locale, t, profile, experience, education, proj
       '',
       '## Contact',
       `- ${SITE.email}`,
+      `- ${SITE.phone.display}`,
       `- ${SITE.social.linkedin}`,
       `- ${SITE.social.github}`,
     ].join('\n'),
