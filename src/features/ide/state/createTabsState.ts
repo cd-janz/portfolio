@@ -1,6 +1,9 @@
 import { createMemo, createSignal } from 'solid-js';
 import type { IdeFile } from '../model/types';
 
+/** Max simultaneously open tabs; opening one more evicts the oldest (FIFO). */
+export const MAX_TABS = 3;
+
 /** Open tabs + active tab. UI-agnostic, reusable and testable on its own. */
 export function createTabsState(files: IdeFile[], initialId?: string) {
   const [openIds, setOpenIds] = createSignal<string[]>(initialId ? [initialId] : []);
@@ -12,7 +15,7 @@ export function createTabsState(files: IdeFile[], initialId?: string) {
 
   const open = (id: string) => {
     if (!byId.has(id)) return;
-    setOpenIds((ids) => (ids.includes(id) ? ids : [...ids, id]));
+    setOpenIds((ids) => (ids.includes(id) ? ids : [...ids, id].slice(-MAX_TABS)));
     setActiveId(id);
   };
 
