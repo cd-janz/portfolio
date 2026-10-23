@@ -1,5 +1,7 @@
 # Juan Camilo Zúñiga — Portfolio
 
+[![CI](https://github.com/cd-janz/portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/cd-janz/portfolio/actions/workflows/ci.yml)
+
 Astro 7 + SolidJS islands, plain CSS tokens, bilingual (en/es), deployed on Vercel.
 
 ## Architecture (one responsibility per module)
