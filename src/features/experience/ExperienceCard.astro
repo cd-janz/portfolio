@@ -63,7 +63,7 @@ const hiddenStack = e.stack.length - stack.length;
   .company a { display: inline-flex; align-items: center; gap: 6px; }
   .company a:hover { text-decoration: underline; }
   .where { color: var(--text-muted); font-size: 0.9rem; }
-  .when { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
+  .when { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; white-space: nowrap; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
   .when b { font-weight: 500; padding: 0.15rem 0.6rem; border-radius: var(--radius-pill); border: 1px solid var(--border-strong); color: var(--text); }
   .summary { color: var(--text-muted); max-width: 70ch; }
   .block { display: grid; gap: var(--space-2); }

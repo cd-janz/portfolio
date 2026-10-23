@@ -48,6 +48,8 @@ const also = groups.find((g) => g.tier === 'also');
   .chip { padding: 0.2rem 0.7rem; border-radius: var(--radius-pill); border: 1px solid var(--border-strong); font-family: var(--font-mono); font-size: 0.78rem; color: var(--text); background: var(--surface); }
   .chip.learning { border-style: dashed; color: var(--text-muted); }
   .also { margin-top: var(--space-6); font-size: 0.9rem; color: var(--text-muted); }
-  .also span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); margin-right: var(--space-2); }
+  .also { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-1) var(--space-2); }
+  .also span { font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+  @media (max-width: 640px) { .also { flex-direction: column; } }
   @media (max-width: 900px) { [data-tier='primary'], [data-tier='secondary'], [data-tier='tertiary'] { grid-column: span 6; } .card { padding: var(--space-6); } }
 </style>
